@@ -14,7 +14,6 @@ import store from './store'
 import './assets/css/style.css'
 import './assets/css/skin_color.css'
 import './assets/css/color_theme.css'
-// import './assets/css/style_rtl.css'
 
 // Vue.use(ElementUI)
 // Vue.use(VueAxios, axios)
