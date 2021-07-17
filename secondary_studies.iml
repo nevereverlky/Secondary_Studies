@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="bootstrap-select" level="application" />
+    <orderEntry type="library" name="bootstrap.bundle" level="application" />
+    <orderEntry type="library" name="perfect-scrollbar" level="application" />
+    <orderEntry type="library" name="metisMenu" level="application" />
+    <orderEntry type="library" name="feather" level="application" />
+    <orderEntry type="library" name="jquery.slimscroll" level="application" />
+    <orderEntry type="library" name="screenfull" level="application" />
+    <orderEntry type="library" name="fastclick" level="application" />
+    <orderEntry type="library" name="waves" level="application" />
+  </component>
+</module>

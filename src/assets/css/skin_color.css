@@ -1,0 +1,119 @@
+/*
+Template Name: Aqua Admin - Responsive Admin Template
+Author: Psd to Html Expert
+更多精品模板：http://www.bootstrapmb.com
+*/
+@import url("https://fonts.googleapis.com/css?family=IBM+Plex+Sans:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i|Rubik:300,300i,400,400i,500,500i,700,700i,900,900i&display=swap");
+/*Social Media Colors*/
+/*Theme Colors*/
+/*Theme Colors For Dark*/
+/*---light skin---*/
+.light-skin .main-header li.user-header {
+  background-color: #ffffff; }
+.light-skin .main-header .navbar .sidebar-toggle {
+  color: #475f7b; }
+.light-skin .main-header .navbar .res-only-view {
+  color: #475f7b; }
+.light-skin .main-header .navbar .nav > li > a {
+  color: #475f7b; }
+  .light-skin .main-header .navbar .nav > li > a:hover, .light-skin .main-header .navbar .nav > li > a:active, .light-skin .main-header .navbar .nav > li > a:focus {
+    background-color: rgba(0, 0, 0, 0.05); }
+.light-skin .main-header .navbar .nav .open > a {
+  background-color: rgba(0, 0, 0, 0.05); }
+  .light-skin .main-header .navbar .nav .open > a:hover, .light-skin .main-header .navbar .nav .open > a:focus {
+    background-color: rgba(0, 0, 0, 0.05); }
+.light-skin .main-header .navbar .nav > .active > a {
+  background-color: rgba(0, 0, 0, 0.05); }
+.light-skin .main-sidebar {
+  -webkit-box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.05);
+  background-color: #ffffff; }
+.light-skin .user-panel > .info {
+  color: #ffffff; }
+  .light-skin .user-panel > .info > a {
+    color: #ffffff; }
+.light-skin .sidebar-menu > li:hover > a, .light-skin .sidebar-menu > li:active > a, .light-skin .sidebar-menu > li.active > a {
+  color: #475f7b;}
+.light-skin .sidebar-menu > li.menu-open > a {
+  color: #475f7b; }
+.light-skin .sidebar-menu > li.treeview.menu-open > a {
+  background-color: rgba(27, 197, 189, 0.2) !important;}
+.light-skin .sidebar-menu > li > .treeview-menu {
+  margin: 0 0px; }
+.light-skin.sidebar-collapse .sidebar-menu > li > .treeview-menu {
+  background-color: #f2f4f4; }
+.light-skin.sidebar-mini.sidebar-collapse .sidebar-menu > li > a > span {
+  background-color: #f2f4f4 !important; }
+.light-skin .sidebar a {
+  color: #475f7b; }
+  .light-skin .sidebar a:hover {
+    text-decoration: none; }
+.light-skin .sidebar-form {
+  border-radius: 3px;
+  border: 1px solid gray; }
+  .light-skin .sidebar-form input[type="text"] {
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.59);
+    border: 1px solid rgba(0, 0, 0, 0.59);
+    height: 35px;
+    color: #ffffff;
+    border-top-left-radius: 2px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 2px; }
+    .light-skin .sidebar-form input[type="text"]:focus {
+      color: #ffffff; }
+      .light-skin .sidebar-form input[type="text"]:focus + .input-group-btn .btn {
+        color: #ffffff; }
+  .light-skin .sidebar-form .btn {
+    box-shadow: none;
+    background-color: rgba(0, 0, 0, 0.59);
+    border: 1px solid rgba(0, 0, 0, 0.59);
+    height: 35px;
+    color: #d5dfea;
+    border-top-left-radius: 0;
+    border-top-right-radius: 2px;
+    border-bottom-right-radius: 2px;
+    border-bottom-left-radius: 0; }
+.light-skin .control-sidebar {
+  color: #475f7b;
+  background-color: #ffffff; }
+  .light-skin .control-sidebar + .control-sidebar-bg {
+    -webkit-box-shadow: 0px 5px 10px 1px rgba(77, 77, 77, 0.2);
+    -moz-box-shadow: 0px 5px 10px 1px rgba(77, 77, 77, 0.2);
+    box-shadow: 0px 5px 10px 1px rgba(77, 77, 77, 0.2); }
+  .light-skin .control-sidebar .nav-tabs.control-sidebar-tabs {
+    border-bottom: 1px solid #cccccc; }
+    .light-skin .control-sidebar .nav-tabs.control-sidebar-tabs > li > a {
+      color: #475f7b;
+      border-bottom-color: #cccccc; }
+      .light-skin .control-sidebar .nav-tabs.control-sidebar-tabs > li > a:hover, .light-skin .control-sidebar .nav-tabs.control-sidebar-tabs > li > a:active, .light-skin .control-sidebar .nav-tabs.control-sidebar-tabs > li > a:focus {
+        border-bottom-color: #cccccc;
+        background-color: transparent; }
+      .light-skin .control-sidebar .nav-tabs.control-sidebar-tabs > li > a.active {
+        background-color: transparent; }
+        .light-skin .control-sidebar .nav-tabs.control-sidebar-tabs > li > a.active:hover, .light-skin .control-sidebar .nav-tabs.control-sidebar-tabs > li > a.active:active, .light-skin .control-sidebar .nav-tabs.control-sidebar-tabs > li > a.active:focus {
+          background-color: transparent; }
+  .light-skin .control-sidebar .control-sidebar-heading {
+    color: #475f7b; }
+  .light-skin .control-sidebar .control-sidebar-subheading {
+    color: #475f7b; }
+  .light-skin .control-sidebar .control-sidebar-menu {
+    margin-left: -14px; }
+    .light-skin .control-sidebar .control-sidebar-menu > li > a:hover {
+      background-color: #d5dfea; }
+    .light-skin .control-sidebar .control-sidebar-menu > li > a .menu-info > p {
+      color: #666666; }
+
+.control-sidebar + .control-sidebar-bg {
+  background-color: #ffffff; }
+
+@media (max-width: 767px) {
+  .light-skin.sidebar-mini.sidebar-collapse .sidebar-menu > li > a > span {
+    background-color: rgba(255, 255, 255, 0) !important; }
+  .light-skin.sidebar-mini.sidebar-collapse .sidebar-menu > li.menu-open > a {
+    background-color: rgba(255, 255, 255, 0.95) !important; }
+  .light-skin.sidebar-mini.sidebar-collapse .sidebar-menu > li.active > a {
+    background-color: rgba(255, 255, 255, 0.95) !important; } }
+.alert-primary, .alert-danger, .alert-error, .alert-info, .alert-success, .alert-warning, .bg-black, .bg-black-active, .callout.callout-danger, .callout.callout-info, .callout.callout-success, .callout.callout-warning, .callout.callout-primary, .label-danger, .label-info, .label-primary, .label-success, .label-warning, .modal-danger .modal-body, .modal-danger .modal-footer, .modal-danger .modal-header, .modal-info .modal-body, .modal-info .modal-footer, .modal-info .modal-header, .modal-primary .modal-body, .modal-primary .modal-footer, .modal-primary .modal-header, .modal-success .modal-body, .modal-success .modal-footer, .modal-success .modal-header, .modal-warning .modal-body, .modal-warning .modal-footer, .modal-warning .modal-header, .bg-warning, .bg-gray, .modal-primary .modal-header *, .modal-info .modal-header *, .modal-success .modal-header *, .modal-danger .modal-header *, .modal-warning .modal-header * {
+  color: #ffffff; }
