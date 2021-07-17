@@ -35,7 +35,7 @@
                               <p class="font-weight-medium mb-0 text-white">本周创建的活动数</p>
                             </div>
                             <div class="d-flex align-items-center flex-wrap">
-                              <h2 class="font-weight-normal text-white">96587</h2>
+                              <h2 class="font-weight-normal text-white">965</h2>
                               <div class="badge badge-light badge-pill ml-10">
                                 <div class="d-flex align-items-baseline">
                                   <span class="mr-2">增加</span>
@@ -58,7 +58,7 @@
                               <p class="font-weight-medium mb-0 text-white">本周审批通过的活动数</p>
                             </div>
                             <div class="d-flex align-items-center flex-wrap">
-                              <h2 class="font-weight-normal text-white">85469</h2>
+                              <h2 class="font-weight-normal text-white">854</h2>
                               <div class="badge badge-light badge-pill ml-10">
                                 <div class="d-flex align-items-baseline">
                                   <span class="mr-2">增加</span>
@@ -81,7 +81,7 @@
                               <p class="font-weight-small mb-0 text-white">本周未达标的活动数</p>
                             </div>
                             <div class="d-flex align-items-center flex-wrap">
-                              <h2 class="font-weight-normal text-white">74589</h2>
+                              <h2 class="font-weight-normal text-white">745</h2>
                               <div class="badge badge-light badge-pill ml-10">
                                 <div class="d-flex align-items-baseline">
                                   <span class="mr-2">减少</span>
@@ -104,7 +104,7 @@
                               <p class="font-weight-medium mb-0 text-white">未达毕业要求的毕业数</p>
                             </div>
                             <div class="d-flex align-items-center flex-wrap">
-                              <h2 class="font-weight-normal text-white">2548</h2>
+                              <h2 class="font-weight-normal text-white">254</h2>
                               <div class="badge badge-light badge-pill ml-10">
                                 <div class="d-flex align-items-baseline">
                                   <span class="mr-2">减少</span>
