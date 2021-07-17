@@ -1,17 +1,17 @@
 <template>
   <div id="Sidebar" class="theme-success">
 
-     <aside class="main-sidebar">
+    <aside class="main-sidebar">
       <!-- sidebar-->
       <section class="sidebar">
 
         <div class="user-profile">
           <div class="ulogo">
-              <!-- logo for regular state and mobile devices -->
-              <div class="d-flex align-items-center justify-content-center">
-                <!--<img src="./../assets/images/logo.png" alt="" height="40" width="40" style="margin-right: 20px">-->
-                <h4><b>第二课堂</b></h4>
-              </div>
+            <!-- logo for regular state and mobile devices -->
+            <div class="d-flex align-items-center justify-content-center">
+              <!--<img src="./../assets/images/logo.png" alt="" height="40" width="40" style="margin-right: 20px">-->
+              <h4><b>第二课堂</b></h4>
+            </div>
           </div>
         </div>
 
@@ -20,34 +20,34 @@
 
           <li class="treeview">
             <a class="waves-effect">
-              <i data-feather="pie-chart"></i><span>活动模块</span>
-              <span class="pull-right-container"><i class="fa fa-angle-right pull-right"></i></span>
+              <i data-feather="pie-chart"/><span>活动模块</span>
+              <span class="pull-right-container"><i class="fa fa-angle-right pull-right"/></span>
             </a>
             <ul class="treeview-menu">
-              <li><router-link tag="a" to="/activityinquiry"><i class="fa fa-ellipsis-h"></i>活动查询与创建</router-link></li>
-              <li><router-link tag="a" to="/activityapproval"><i class="fa fa-ellipsis-h"></i>活动审批</router-link></li>
-              <li><router-link tag="a" to="/authorization"><i class="fa fa-ellipsis-h"></i>权限分配</router-link></li>
+              <li><router-link tag="a" to="/activityinquiry"><i class="fa fa-ellipsis-h"/>活动查询与创建</router-link></li>
+              <li><router-link tag="a" to="/activityapproval"><i class="fa fa-ellipsis-h"/>活动审批</router-link></li>
+              <li><router-link tag="a" to="/authorization"><i class="fa fa-ellipsis-h"/>权限分配</router-link></li>
             </ul>
           </li>
 
           <li class="treeview">
             <a class="waves-effect">
-              <i data-feather="message-circle"></i><span>活动章模块</span>
-              <span class="pull-right-container"><i class="fa fa-angle-right pull-right"></i></span>
+              <i data-feather="message-circle"/><span>活动章模块</span>
+              <span class="pull-right-container"><i class="fa fa-angle-right pull-right"/></span>
             </a>
             <ul class="treeview-menu">
-              <li><router-link tag="a" to="/activitychapter"><i class="fa fa-ellipsis-h"></i>导入章</router-link></li>
-              <li><router-link tag="a" to="/chapterinout"><i class="fa fa-ellipsis-h"></i>导入/导出章</router-link></li>
+              <li><router-link tag="a" to="/activitychapter"><i class="fa fa-ellipsis-h"/>导入章</router-link></li>
+              <li><router-link tag="a" to="/chapterinout"><i class="fa fa-ellipsis-h"/>导入/导出章</router-link></li>
             </ul>
           </li>
 
           <li class="treeview">
             <a class="waves-effect">
-              <i data-feather="mail"></i><span>帐号模块</span><span class="pull-right-container"><i class="fa fa-angle-right pull-right"></i>
-            </span>
+              <i data-feather="mail"/><span>帐号模块</span><span class="pull-right-container"><i class="fa fa-angle-right pull-right"/>
+              </span>
             </a>
             <ul class="treeview-menu">
-              <li><router-link tag="a" to="/informationentry"><i class="fa fa-ellipsis-h"></i>新生信息录入</router-link></li>
+              <li><router-link tag="a" to="/informationentry"><i class="fa fa-ellipsis-h"/>新生信息录入</router-link></li>
             </ul>
           </li>
 
@@ -55,8 +55,8 @@
 
           <li class="treeview">
             <router-link tag="a" to="/overallview">
-              <i data-feather="grid"></i><span>预警与总览</span>
-              <span class="pull-right-container"><i class="fa fa-angle-right pull-right"></i></span>
+              <i data-feather="grid"/><span>预警与总览</span>
+              <span class="pull-right-container"><i class="fa fa-angle-right pull-right"/></span>
             </router-link>
           </li>
 
@@ -64,7 +64,7 @@
 
           <li @click="tologin">
             <a>
-              <i data-feather="lock"></i><span>注销</span>
+              <i data-feather="lock"/><span>注销</span>
             </a>
           </li>
 
@@ -80,29 +80,29 @@ export default {
   name: 'Sidebar',
   data() {
     return {
-      currentMenu:'/overallview'
+      currentMenu: '/overallview'
     }
   },
-  created(){
-    let self = this;
-    let currentUrl = window.location.href;
-    self.currentMenu = currentUrl.split('#')[1];
-    console.log(self.currentMenu);
+  created() {
+    const self = this
+    const currentUrl = window.location.href
+    self.currentMenu = currentUrl.split('#')[1]
+    console.log(self.currentMenu)
   },
   methods: {
-    reloadRouter (path) {
+    reloadRouter(path) {
     },
-    tologin () {
-      let _this = this;
+    tologin() {
+      const _this = this
       // request.$post('/user/logout', {}, (res) => {
       //   console.log(res.data);
       //   request.localStorageSet('token', null);
-        setTimeout(function () {
-          _this.$router.push('/signin');
-          // location.reload();
-        }, 3000)
-        // let message = res.data.message;
-        request.message(_this, message, 'success');
+      setTimeout(function() {
+        _this.$router.push('/signin')
+        // location.reload();
+      }, 3000)
+      // let message = res.data.message;
+      request.message(_this, message, 'success')
       // }, _this)
     }
   }
