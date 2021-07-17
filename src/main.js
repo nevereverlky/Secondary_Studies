@@ -24,7 +24,7 @@ import './assets/css/color_theme.css'
 axios.defaults.baseURL = '/api'
 Vue.config.productionTip = false
 
-Vue.filter('dateFormat', function (originVal) {
+Vue.filter('dateFormat', function(originVal) {
   const dt = new Date(originVal)
   const y = dt.getFullYear()
   const m = (dt.getMonth() + 1 + '').padStart(2, '0')

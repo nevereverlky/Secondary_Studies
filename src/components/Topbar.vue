@@ -9,12 +9,12 @@
           <ul class="nav">
             <li class="btn-group nav-item">
               <a href="#" class="waves-effect waves-light nav-link rounded svg-bt-icon" data-toggle="push-menu" role="button">
-                <i class="fa fa-navicon" aria-hidden="true"></i>
+                <i class="fa fa-navicon" aria-hidden="true"/>
               </a>
             </li>
             <li class="btn-group nav-item">
               <a href="#" data-provide="fullscreen" class="waves-effect waves-light nav-link rounded svg-bt-icon" title="Full Screen">
-                <i class="fa fa-expand" aria-hidden="true"></i>
+                <i class="fa fa-expand" aria-hidden="true"/>
               </a>
             </li>
           </ul>
@@ -25,7 +25,7 @@
             <!-- Notifications -->
             <li class="dropdown notifications-menu">
               <a href="#" class="waves-effect waves-light rounded dropdown-toggle" data-toggle="dropdown" title="Notifications">
-                <i class="fa fa-bell-o"></i>
+                <i class="fa fa-bell-o"/>
               </a>
               <ul class="dropdown-menu animated bounceIn">
 
@@ -47,37 +47,37 @@
                   <ul class="menu sm-scrol">
                     <li>
                       <a href="#">
-                        <i class="fa fa-users text-info"></i> Curabitur id eros quis nunc suscipit blandit.
+                        <i class="fa fa-users text-info"/> Curabitur id eros quis nunc suscipit blandit.
                       </a>
                     </li>
                     <li>
                       <a href="#">
-                        <i class="fa fa-warning text-warning"></i> Duis malesuada justo eu sapien elementum, in semper diam posuere.
+                        <i class="fa fa-warning text-warning"/> Duis malesuada justo eu sapien elementum, in semper diam posuere.
                       </a>
                     </li>
                     <li>
                       <a href="#">
-                        <i class="fa fa-users text-danger"></i> Donec at nisi sit amet tortor commodo porttitor pretium a erat.
+                        <i class="fa fa-users text-danger"/> Donec at nisi sit amet tortor commodo porttitor pretium a erat.
                       </a>
                     </li>
                     <li>
                       <a href="#">
-                        <i class="fa fa-shopping-cart text-success"></i> In gravida mauris et nisi
+                        <i class="fa fa-shopping-cart text-success"/> In gravida mauris et nisi
                       </a>
                     </li>
                     <li>
                       <a href="#">
-                        <i class="fa fa-user text-danger"></i> Praesent eu lacus in libero dictum fermentum.
+                        <i class="fa fa-user text-danger"/> Praesent eu lacus in libero dictum fermentum.
                       </a>
                     </li>
                     <li>
                       <a href="#">
-                        <i class="fa fa-user text-primary"></i> Nunc fringilla lorem
+                        <i class="fa fa-user text-primary"/> Nunc fringilla lorem
                       </a>
                     </li>
                     <li>
                       <a href="#">
-                        <i class="fa fa-user text-success"></i> Nullam euismod dolor ut quam interdum, at scelerisque ipsum imperdiet.
+                        <i class="fa fa-user text-success"/> Nullam euismod dolor ut quam interdum, at scelerisque ipsum imperdiet.
                       </a>
                     </li>
                   </ul>
@@ -96,16 +96,16 @@
               </a>
               <ul class="dropdown-menu animated flipInX">
                 <li class="user-body">
-                  <a class="dropdown-item" href="#"><i class="fa fa fa-user text-muted mr-2"></i>帐号</a>
-                  <a class="dropdown-item" href="#"><i class="fa fa-unlock-alt text-muted mr-2"></i>修改密码</a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" @click="tologin"><i class="fa fa-lock text-muted mr-2"></i>注销</a>
+                  <a class="dropdown-item" href="#"><i class="fa fa fa-user text-muted mr-2"/>帐号</a>
+                  <a class="dropdown-item" href="#"><i class="fa fa-unlock-alt text-muted mr-2"/>修改密码</a>
+                  <div class="dropdown-divider"/>
+                  <a class="dropdown-item" @click="tologin"><i class="fa fa-lock text-muted mr-2"/>注销</a>
                 </li>
               </ul>
             </li>
             <li>
               <a href="#" data-toggle="control-sidebar" title="Setting" class="waves-effect waves-light">
-                <i class="fa fa-cog"></i>
+                <i class="fa fa-cog"/>
               </a>
             </li>
 
@@ -122,20 +122,20 @@ export default {
   name: 'Topbar',
   data() {
     return {
-    };
+    }
   },
   methods: {
-    tologin () {
-      let _this = this;
+    tologin() {
+      const _this = this
       // request.$post('/user/logout', {}, (res) => {
       //   console.log(res.data);
       //   request.localStorageSet('token', null);
-      setTimeout(function () {
-        _this.$router.push('/signin');
+      setTimeout(function() {
+        _this.$router.push('/signin')
         // location.reload();
       }, 3000)
       // let message = res.data.message;
-      request.message(_this, message, 'success');
+      request.message(_this, message, 'success')
       // }, _this)
     }
   }

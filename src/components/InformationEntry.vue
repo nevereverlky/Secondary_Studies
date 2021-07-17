@@ -13,7 +13,7 @@
                   <div class="d-inline-block align-items-center">
                     <nav>
                       <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><router-link tag="a" to="/informationentry"><i class="fa fa-home" aria-hidden="true"></i></router-link></li>
+                        <li class="breadcrumb-item"><router-link tag="a" to="/informationentry"><i class="fa fa-home" aria-hidden="true"/></router-link></li>
                         <li class="breadcrumb-item" aria-current="page">账号模块</li>
                         <li class="breadcrumb-item active" aria-current="page">新生信息导入</li>
                       </ol>
@@ -24,9 +24,7 @@
             </div>
 
             <!-- Main content -->
-            <section class="content">
-
-            </section>
+            <section class="content"/>
             <!-- /.content -->
           </div>
         </div>
