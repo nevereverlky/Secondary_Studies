@@ -174,7 +174,7 @@
                     <el-table-column
                       prop="action"
                       width="200">
-                      <template slot="header">
+                      <template slot="header" slot-scope="scope">
                         <el-input
                           v-model="search_name"
                           scope
@@ -252,7 +252,7 @@
                     <el-table-column
                       prop="action"
                       width="200">
-                      <template slot="header">
+                      <template slot="header" slot-scope="scope">
                         <el-input
                           v-model="search_activename"
                           scope
@@ -329,7 +329,7 @@
                     <el-table-column
                       prop="action"
                       width="200">
-                      <template slot="header">
+                      <template slot="header" slot-scope="scope">
                         <el-input
                           v-model="search_activename"
                           scope
@@ -407,7 +407,7 @@
                     <el-table-column
                       prop="action"
                       width="200">
-                      <template slot="header">
+                      <template slot="header" slot-scope="scope">
                         <el-input
                           v-model="search_activename"
                           scope
