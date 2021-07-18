@@ -2,7 +2,7 @@ import axios from 'axios'
 import qs from 'QS'
 
 export default {
-  $post (url, params, success, that) {
+  $post(url, params, success, that) {
     axios.post(url,
       qs.stringify(
         params
@@ -18,11 +18,11 @@ export default {
       } else {
         this.todoError(res, that)
       }
-    }).catch(function (error) {
+    }).catch(function(error) {
       console.log(error)
     })
   },
-  $postFileList (url, fileList, params, success, that) {
+  $postFileList(url, fileList, params, success, that) {
     axios.post(url, fileList,
       {
         params: params,
@@ -37,11 +37,11 @@ export default {
       } else {
         this.todoError(res, that)
       }
-    }).catch(function (error) {
+    }).catch(function(error) {
       console.log(error)
     })
   },
-  $get (url, params, success, that) {
+  $get(url, params, success, that) {
     axios.get(url,
       {
         params: params,
@@ -55,19 +55,19 @@ export default {
       } else {
         this.todoError(res, that)
       }
-    }).catch(function (error) {
+    }).catch(function(error) {
       console.log(error)
     })
   },
-  localStorageSet: function (key, value, ttl) {
+  localStorageSet: function(key, value, ttl) {
     localStorage.setItem(key, qs.stringify({
       value: value,
       exp: new Date(new Date().getTime() + ttl).getTime()
     }))
   },
-  localStorageGet: function (key) {
+  localStorageGet: function(key) {
     // 若过期则删除
-    let data = qs.parse(localStorage.getItem(key))
+    const data = qs.parse(localStorage.getItem(key))
     if (data !== null) {
       if (data.exp != null && data.exp < new Date().getTime()) {
         localStorage.removeItem(key)
@@ -77,7 +77,7 @@ export default {
     }
     return null
   },
-  todoError (res, that) {
+  todoError(res, that) {
     if (res.data.code === '401') {
       localStorage.removeItem('token')
     } else {
@@ -85,7 +85,7 @@ export default {
       this.closeFullScreen(this.openFullScreen(that))
     }
   },
-  message (that, message, type) {
+  message(that, message, type) {
     that.$message({
       message: message,
       type: type
@@ -101,7 +101,7 @@ export default {
     })
     return loading
   },
-  closeFullScreen (loading) {
+  closeFullScreen(loading) {
     loading.close()
   }
 }

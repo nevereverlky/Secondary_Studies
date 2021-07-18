@@ -80,7 +80,7 @@ export default {
           //            }
           location.reload()
         }, 2000)
-        request.message(_this, message, 'success')
+        // request.message(_this, message, 'success')
         // }, _this)
       }
     }

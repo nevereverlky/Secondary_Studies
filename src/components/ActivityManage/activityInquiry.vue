@@ -13,7 +13,7 @@
                   <div class="d-inline-block align-items-center">
                     <nav>
                       <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><router-link tag="a" to="/activityinquiry"><i class="fa fa-home" aria-hidden="true"></i></router-link></li>
+                        <li class="breadcrumb-item"><router-link tag="a" to="/activityinquiry"><i class="fa fa-home" aria-hidden="true"/></router-link></li>
                         <li class="breadcrumb-item" aria-current="page">活动模块</li>
                         <li class="breadcrumb-item active" aria-current="page">活动查询与创建</li>
                       </ol>
@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-sm-5">
                   <div class="btn-group float-sm-right">
-                    <button type="button" class="btn btn-primary btn-sm waves-effect waves-light"><i class="fa fa-plus-square mr-1"></i>创建活动</button>
+                    <button type="button" class="btn btn-primary btn-sm waves-effect waves-light"><i class="fa fa-plus-square mr-1"/>创建活动</button>
                   </div>
                 </div>
               </div>
@@ -33,7 +33,7 @@
               <div class="col-12">
                 <div class="box box-default">
                   <!--<div class="box-header with-border">-->
-                    <!--<h5 class="box-title">活动审批状态</h5>-->
+                  <!--<h5 class="box-title">活动审批状态</h5>-->
                   <!--</div>-->
                   <!-- /.box-header -->
                   <div class="box-body">
@@ -49,20 +49,20 @@
                           <div class="col-md-9">
                             <el-timeline>
                               <el-timeline-item timestamp="2018/4/12 12:00:00" placement="top">
-                                  <div class="box bl-3 border-secondary">
-                                    <div class="box-body" style="display: flex">
-                                      <div style="flex: 1">
-                                        <p><b>活动名称</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;田径运动会开幕式活动<span class="badge badge-default" style="margin-left: 10px">志愿活动</span></p>
-                                        <p><b>举办单位</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;社团联</p>
-                                        <p><b>活动地点</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C楼511</p>
-                                      </div>
-                                      <div style="flex: 1">
-                                        <p><b>申请章数</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="badge badge-primary">512</span></p>
-                                        <p><b>活动学期</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-2021学年第一学期</p>
-                                        <p><b>扫章时间</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2021.7.14 12:00 ~ 13:00</p>
-                                      </div>
+                                <div class="box bl-3 border-secondary">
+                                  <div class="box-body" style="display: flex">
+                                    <div style="flex: 1">
+                                      <p><b>活动名称</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;田径运动会开幕式活动<span class="badge badge-default" style="margin-left: 10px">志愿活动</span></p>
+                                      <p><b>举办单位</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;社团联</p>
+                                      <p><b>活动地点</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C楼511</p>
+                                    </div>
+                                    <div style="flex: 1">
+                                      <p><b>申请章数</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="badge badge-primary">512</span></p>
+                                      <p><b>活动学期</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-2021学年第一学期</p>
+                                      <p><b>扫章时间</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2021.7.14 12:00 ~ 13:00</p>
                                     </div>
                                   </div>
+                                </div>
                               </el-timeline-item>
                               <el-timeline-item timestamp="2018/4/3 12:00:00" placement="top">
                                 <div class="box bl-3 border-secondary">
@@ -105,7 +105,7 @@
                                   <div class="box-footer text-right p-0">
                                     <div class="px-25 py-5 w-100" style="float:left"><span class="badge badge-success">待审批</span></div>
                                     <el-tooltip class="item" effect="dark" content="仅可修改一次" placement="bottom">
-                                      <button class="btn btn-outline btn-success btn-sm"><i class="fa fa-pencil"></i></button>
+                                      <button class="btn btn-outline btn-success btn-sm"><i class="fa fa-pencil"/></button>
                                     </el-tooltip>
                                   </div>
                                 </div>
@@ -131,7 +131,7 @@
                                     <div class="px-25 py-5 w-400" style="float:left">
                                       驳回原因驳回原因驳回原因驳回原因
                                     </div>
-                                    <button class="btn btn-outline btn-warning btn-sm"><i class="fa fa-pencil"></i></button>
+                                    <button class="btn btn-outline btn-warning btn-sm"><i class="fa fa-pencil"/></button>
                                   </div>
                                 </div>
                               </el-timeline-item>
@@ -157,7 +157,7 @@
 
 <script>
 export default {
-  name: 'activityInquiry'
+  name: 'ActivityInquiry'
 }
 </script>
 
