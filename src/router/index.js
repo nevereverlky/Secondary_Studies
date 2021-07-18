@@ -11,6 +11,8 @@ import chapterInout from '@/components/ActivityManage/chapterInout'
 import Authorization from '@/components/ActivityManage/Authorization'
 import InformationEntry from '@/components/InformationEntry'
 import OverallView from '@/components/OverallView'
+import userInfo from '@/components/userInfo'
+import EditPassword from '@/components/EditPassword'
 // const Index = () => import('../views/Index.vue')
 const Signin = () => import('../views/Signin.vue')
 // const activityApproval = () => import('../components/ActivityManage/activityApproval')
@@ -67,6 +69,16 @@ const router = new Router({
           path: '/overallview',
           name: 'OverallView',
           component: OverallView
+        },
+        {
+          path: '/userInfo',
+          name: 'userInfo',
+          component: userInfo
+        },
+        {
+          path: '/EditPassword',
+          name: 'EditPassword',
+          component: EditPassword
         }
       ]
     }

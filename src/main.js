@@ -15,6 +15,11 @@ import './assets/css/style.css'
 import './assets/css/skin_color.css'
 import './assets/css/color_theme.css'
 
+// import { getDicts } from "@/api/system/dict/data";
+// import { getConfigKey } from "@/api/system/config";
+import { parseTime, resetForm, addDateRange, selectDictLabel, selectDictLabels, handleTree } from '@/utils/ruoyi'
+import Pagination from '@/components/Pagination'
+
 // Vue.use(ElementUI)
 // Vue.use(VueAxios, axios)
 // Vue.use(Vuex)
@@ -22,6 +27,15 @@ import './assets/css/color_theme.css'
 // Vue.prototype.$qs = qs
 axios.defaults.baseURL = '/api'
 Vue.config.productionTip = false
+
+Vue.prototype.parseTime = parseTime
+Vue.prototype.resetForm = resetForm
+Vue.prototype.addDateRange = addDateRange
+Vue.prototype.selectDictLabel = selectDictLabel
+Vue.prototype.selectDictLabels = selectDictLabels
+Vue.prototype.handleTree = handleTree
+
+Vue.component('Pagination', Pagination)
 
 Vue.filter('dateFormat', function(originVal) {
   const dt = new Date(originVal)

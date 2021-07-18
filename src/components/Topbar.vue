@@ -96,8 +96,12 @@
               </a>
               <ul class="dropdown-menu animated flipInX">
                 <li class="user-body">
-                  <a class="dropdown-item" href="#"><i class="fa fa fa-user text-muted mr-2"/>帐号</a>
-                  <a class="dropdown-item" href="#"><i class="fa fa-unlock-alt text-muted mr-2"/>修改密码</a>
+                  <router-link tag="a" to="/UserInfo">
+                    <a class="dropdown-item"><i class="fa fa fa-user text-muted mr-2"/>帐号</a>
+                  </router-link>
+                  <router-link tag="a" to="/EditPassword">
+                    <a class="dropdown-item"><i class="fa fa-unlock-alt text-muted mr-2"/>修改密码</a>
+                  </router-link>
                   <div class="dropdown-divider"/>
                   <a class="dropdown-item" @click="tologin"><i class="fa fa-lock text-muted mr-2"/>注销</a>
                 </li>
