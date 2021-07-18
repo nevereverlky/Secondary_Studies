@@ -205,66 +205,6 @@
               <div>
                 <!--finalShow.slice((currentPage-1)*pageSize,currentPage*pageSize)-->
                 <el-table
-<<<<<<< HEAD
-                :data="activeData"
-                :header-cell-style="{color: '#000000', fontSize: '14px'}"
-                style="width: 100%"
-                cell-style="font-size:13px">
-                <el-table-column label="本周创建的活动如下">
-                  <el-table-column
-                    label="负责人"
-                    prop="account"
-                    width="100">
-                    <template slot-scope="scope">
-                      {{scope.row.account}}
-                    </template>
-                  </el-table-column>
-                  <el-table-column
-                    label="活动名称"
-                    prop="activename">
-                    <template slot-scope="scope">
-                      {{scope.row.activename}}
-                    </template>
-                  </el-table-column>
-                  <el-table-column
-                    label="举办单位"
-                    prop="organization"
-                    width="140">
-                    <template slot-scope="scope">
-                      {{scope.row.organization}}
-                    </template>
-                  </el-table-column>
-                  <el-table-column
-                    label="活动地点"
-                    prop="place"
-                    width="100">
-                    <template slot-scope="scope">
-                      {{scope.row.place}}
-                    </template>
-                  </el-table-column>
-                  <el-table-column
-                    label="扫章时间"
-                    prop="time"
-                    width="180">
-                    <template slot-scope="scope">
-                      {{scope.row.time}}
-                    </template>
-                  </el-table-column>
-                  <el-table-column
-                    prop="action"
-                    width="200">
-                    <template slot="header">
-                      <el-input
-                        scope
-                        style="width: 100%"
-                        v-model="search_activename"
-                        size="mini"
-                        placeholder="输入活动名称搜索"></el-input>
-                    </template>
-                    <template slot-scope="scope">
-                      <span class="badge badge-dark">{{scope.row.type}}</span>
-                    </template>
-=======
                   :data="activeData"
                   :header-cell-style="{color: '#000000', fontSize: '14px'}"
                   style="width: 100%"
@@ -312,7 +252,7 @@
                     <el-table-column
                       prop="action"
                       width="200">
-                      <template slot="header" slot-scope="scope">
+                      <template slot="header">
                         <el-input
                           v-model="search_activename"
                           scope
@@ -324,9 +264,7 @@
                         <span class="badge badge-dark">{{ scope.row.type }}</span>
                       </template>
                     </el-table-column>
->>>>>>> origin
-                  </el-table-column>
-                </el-table>
+                </el-table-column></el-table>
 
                 <div class="block" style="margin-top:30px;float: right">
                   <el-pagination
@@ -512,7 +450,7 @@
 // import request from '/../../utils/request'
 export default {
   name: 'OverallView',
-  data () {
+  data() {
     return {
       search_activename: '', // input的值
       search_name: '',
@@ -551,12 +489,6 @@ export default {
       activeData_length: 0, // 总条目数
       pageSize: 10 // 每页的数据条数
     }
-<<<<<<< HEAD
-  },
-  methods: {
-    // 每页条数改变时触发 选择一页显示多少行
-    handleSizeChange (val) {
-=======
   },
   watch: {
     // watch监视input输入值的变化,只要是watch变化了 search()就会被调用
@@ -567,21 +499,11 @@ export default {
   methods: {
     // 每页条数改变时触发 选择一页显示多少行
     handleSizeChange(val) {
->>>>>>> origin
       console.log(`每页 ${val} 条`)
       this.currentPage = 1
       this.pageSize = val
     },
     // 当前页改变时触发 跳转其他页
-<<<<<<< HEAD
-    handleCurrentChange (val) {
-      console.log(`当前页: ${val}`)
-      this.currentPage = val
-    },
-    handleSearch (val) {
-      let _this = this
-      let search = val
-=======
     handleCurrentChange(val) {
       console.log(`当前页: ${val}`)
       this.currentPage = val
@@ -589,7 +511,6 @@ export default {
     handleSearch(val) {
       const _this = this
       const search = val
->>>>>>> origin
       this.search_equipName = search
       _this.currentPage = 1
       // this.finalShow = this.activeData.filter(
@@ -597,15 +518,6 @@ export default {
       //     !search || data.activityname.toString().includes(search.toString())
       // );
       // this.activeData_length = this.finalShow.length;
-<<<<<<< HEAD
-    }
-  },
-  watch: {
-    // watch监视input输入值的变化,只要是watch变化了 search()就会被调用
-    search_equipName (newVal) {
-      this.handleSearch(newVal)
-=======
->>>>>>> origin
     }
   }
 }

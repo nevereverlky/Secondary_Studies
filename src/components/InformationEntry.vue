@@ -549,7 +549,8 @@ export default {
   methods: {
     /** 查询用户列表 */
     getList() {
-      this.loading = true
+      this.loading = false
+      // this.loading = true
       // listUser(this.addDateRange(this.queryParams, this.dateRange)).then(response => {
       //     this.userList = response.rows;
       //     this.total = response.total;
