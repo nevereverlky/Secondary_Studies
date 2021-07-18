@@ -1,6 +1,12 @@
 // [Master Javascript]
 
+<<<<<<< HEAD
+// eslint-disable-next-line no-tabs
 // Project:	Aqua Admin - Responsive Admin Template
+// eslint-disable-next-line no-tabs
+=======
+// Project:	Aqua Admin - Responsive Admin Template
+>>>>>>> origin
 // Primary use:	Aqua Admin - Responsive Admin Template
 
 // should be included in all pages. It controls some layout
@@ -19,7 +25,12 @@ if (typeof jQuery === 'undefined') {
 //  Configure any options by passing data-option="value"
 //  to the body tag.
 
+<<<<<<< HEAD
+// eslint-disable-next-line no-unused-expressions
++(function ($) {
+=======
 +(function($) {
+>>>>>>> origin
   'use strict'
 
   var DataKey = 'Aquaadmin.layout'
@@ -47,7 +58,11 @@ if (typeof jQuery === 'undefined') {
     holdTransition: 'hold-transition'
   }
 
+<<<<<<< HEAD
+  var Layout = function (options) {
+=======
   var Layout = function(options) {
+>>>>>>> origin
     this.options = options
     this.bindedResize = false
     this.activate()
@@ -150,8 +165,13 @@ if (typeof jQuery === 'undefined') {
   }
 
   // Plugin Definition
+<<<<<<< HEAD
+  function Plugin (option) {
+    return this.each(function () {
+=======
   function Plugin(option) {
     return this.each(function() {
+>>>>>>> origin
       var $this = $(this)
       var data = $this.data(DataKey)
 
@@ -184,6 +204,10 @@ if (typeof jQuery === 'undefined') {
   $(window).on('load', function() {
     Plugin.call($('body'))
   })
+<<<<<<< HEAD
+// eslint-disable-next-line no-undef
+=======
+>>>>>>> origin
 }(jQuery)) + // End of use strict
 
 /* PushMenu()
@@ -193,7 +217,11 @@ if (typeof jQuery === 'undefined') {
  *          or add [data-toggle="push-menu"] to any button
  *          Pass any option as data-option="value"
  */
+<<<<<<< HEAD
+(function ($) {
+=======
 (function($) {
+>>>>>>> origin
   'use strict'
 
   var DataKey = 'Aquaadmin.pushmenu'
@@ -236,7 +264,11 @@ if (typeof jQuery === 'undefined') {
     this.init()
   }
 
+<<<<<<< HEAD
+  PushMenu.prototype.init = function () {
+=======
   PushMenu.prototype.init = function() {
+>>>>>>> origin
     if (this.options.expandOnHover ||
       ($('body').is(Selector.mini + Selector.layoutFixed))) {
       this.expandOnHover()
@@ -294,8 +326,13 @@ if (typeof jQuery === 'undefined') {
     }
   }
 
+<<<<<<< HEAD
+  PushMenu.prototype.expandOnHover = function () {
+    $(Selector.mainSidebar).hover(function () {
+=======
   PushMenu.prototype.expandOnHover = function() {
     $(Selector.mainSidebar).hover(function() {
+>>>>>>> origin
       if ($('body').is(Selector.mini + Selector.collapsed) &&
         $(window).width() > this.options.collapseScreenSize) {
         this.expand()
@@ -322,8 +359,13 @@ if (typeof jQuery === 'undefined') {
   }
 
   // PushMenu Plugin Definition
+<<<<<<< HEAD
+  function Plugin (option) {
+    return this.each(function () {
+=======
   function Plugin(option) {
     return this.each(function() {
+>>>>>>> origin
       var $this = $(this)
       var data = $this.data(DataKey)
 
@@ -332,7 +374,7 @@ if (typeof jQuery === 'undefined') {
         $this.data(DataKey, (data = new PushMenu(options)))
       }
 
-      if (option == 'toggle') data.toggle()
+      if (option === 'toggle') data.toggle()
     })
   }
 
@@ -355,6 +397,10 @@ if (typeof jQuery === 'undefined') {
   $(window).on('load', function() {
     Plugin.call($(Selector.button))
   })
+<<<<<<< HEAD
+// eslint-disable-next-line no-undef
+=======
+>>>>>>> origin
 }(jQuery)) + // End of use strict
 
 /* Tree()
@@ -365,7 +411,11 @@ if (typeof jQuery === 'undefined') {
  *         or add [data-widget="tree"] to the ul element
  *         Pass any option as data-option="value"
  */
+<<<<<<< HEAD
+(function ($) {
+=======
 (function($) {
+>>>>>>> origin
   'use strict'
 
   var DataKey = 'Aquaadmin.tree'
@@ -418,7 +468,7 @@ if (typeof jQuery === 'undefined') {
       return
     }
 
-    if (!this.options.followLink || link.attr('href') == '#') {
+    if (!this.options.followLink || link.attr('href') === '#') {
       event.preventDefault()
     }
 
@@ -466,8 +516,13 @@ if (typeof jQuery === 'undefined') {
   }
 
   // Plugin Definition
+<<<<<<< HEAD
+  function Plugin (option) {
+    return this.each(function () {
+=======
   function Plugin(option) {
     return this.each(function() {
+>>>>>>> origin
       var $this = $(this)
       var data = $this.data(DataKey)
 
@@ -495,6 +550,10 @@ if (typeof jQuery === 'undefined') {
       Plugin.call($(this))
     })
   })
+<<<<<<< HEAD
+// eslint-disable-next-line no-undef
+=======
+>>>>>>> origin
 }(jQuery)) + // End of use strict
 
 /* ControlSidebar()
@@ -504,7 +563,11 @@ if (typeof jQuery === 'undefined') {
  *         or add [data-toggle="control-sidebar"] to the trigger
  *         Pass any option as data-option="value"
  */
+<<<<<<< HEAD
+(function ($) {
+=======
 (function($) {
+>>>>>>> origin
   'use strict'
 
   var DataKey = 'Aquaadmin.controlsidebar'
@@ -534,7 +597,11 @@ if (typeof jQuery === 'undefined') {
   }
 
   // ControlSidebar Class Definition
+<<<<<<< HEAD
+  var ControlSidebar = function (element, options) {
+=======
   var ControlSidebar = function(element, options) {
+>>>>>>> origin
     this.element = element
     this.options = options
     this.hasBindedResize = false
@@ -598,8 +665,13 @@ if (typeof jQuery === 'undefined') {
   }
 
   // Plugin Definition
+<<<<<<< HEAD
+  function Plugin (option) {
+    return this.each(function () {
+=======
   function Plugin(option) {
     return this.each(function() {
+>>>>>>> origin
       var $this = $(this)
       var data = $this.data(DataKey)
 
@@ -628,6 +700,10 @@ if (typeof jQuery === 'undefined') {
     if (event) event.preventDefault()
     Plugin.call($(this), 'toggle')
   })
+<<<<<<< HEAD
+// eslint-disable-next-line no-undef
+=======
+>>>>>>> origin
 }(jQuery)) + // End of use strict
 
 /* BoxWidget()
@@ -637,7 +713,11 @@ if (typeof jQuery === 'undefined') {
  *         This plugin auto activates on any element using the `.box` class
  *         Pass any option as data-option="value"
  */
+<<<<<<< HEAD
+(function ($) {
+=======
 (function($) {
+>>>>>>> origin
   'use strict'
 
   var DataKey = 'Aquaadmin.boxwidget'
@@ -750,8 +830,13 @@ if (typeof jQuery === 'undefined') {
   }
 
   // Plugin Definition
+<<<<<<< HEAD
+  function Plugin (option) {
+    return this.each(function () {
+=======
   function Plugin(option) {
     return this.each(function() {
+>>>>>>> origin
       var $this = $(this)
       var data = $this.data(DataKey)
 
@@ -786,6 +871,19 @@ if (typeof jQuery === 'undefined') {
       Plugin.call($(this))
     })
   })
+<<<<<<< HEAD
+// eslint-disable-next-line no-undef
+}(jQuery)) + // End of use strict
+
+// Fullscreen
+// eslint-disable-next-line no-undef
+$(function () {
+  'use strict'
+
+  // eslint-disable-next-line no-undef
+  $('[data-provide~="fullscreen"]').on('click', function () {
+    // eslint-disable-next-line no-undef
+=======
 }(jQuery)) + // End of use strict
 
 /* TodoList()
@@ -1063,11 +1161,20 @@ $(function() {
   'use strict'
 
   $('[data-provide~="fullscreen"]').on('click', function() {
+>>>>>>> origin
     screenfull.toggle($('#container')[0])
   })
 }) // End of use strict
 
 // feather icon
+<<<<<<< HEAD
+// eslint-disable-next-line no-undef
+$(function () {
+  'use strict'
+  // eslint-disable-next-line no-undef
+  feather.replace()
+}) // End of use strict
+=======
 $(function() {
   'use strict'
   feather.replace()
@@ -1414,3 +1521,4 @@ $(function() {
     Waves.displayEffect()
   }, false)
 })(window)
+>>>>>>> origin
