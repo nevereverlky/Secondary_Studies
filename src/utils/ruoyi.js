@@ -57,7 +57,7 @@ export function resetForm(refName) {
 export function addDateRange(params, dateRange, propName) {
   var search = params
   search.params = {}
-  if (dateRange != null && dateRange != '') {
+  if (dateRange != null && dateRange !== '') {
     if (typeof (propName) === 'undefined') {
       search.params['beginTime'] = dateRange[0]
       search.params['endTime'] = dateRange[1]
@@ -73,7 +73,7 @@ export function addDateRange(params, dateRange, propName) {
 export function selectDictLabel(datas, value) {
   var actions = []
   Object.keys(datas).some((key) => {
-    if (datas[key].dictValue == ('' + value)) {
+    if (datas[key].dictValue === ('' + value)) {
       actions.push(datas[key].dictLabel)
       return true
     }
@@ -88,7 +88,7 @@ export function selectDictLabels(datas, value, separator) {
   var temp = value.split(currentSeparator)
   Object.keys(value.split(currentSeparator)).some((val) => {
     Object.keys(datas).some((key) => {
-      if (datas[key].dictValue == ('' + temp[val])) {
+      if (datas[key].dictValue === ('' + temp[val])) {
         actions.push(datas[key].dictLabel + currentSeparator)
       }
     })
@@ -103,7 +103,9 @@ export function selectDictLabels(datas, value, separator) {
 
 // 字符串格式化(%s )
 export function sprintf(str) {
-  var args = arguments, flag = true, i = 1
+  var args = arguments
+  var flag = true
+  var i = 1
   str = str.replace(/%s/g, function() {
     var arg = args[i++]
     if (typeof arg === 'undefined') {
@@ -117,7 +119,7 @@ export function sprintf(str) {
 
 // 转换字符串，undefined,null等转化为""
 export function praseStrEmpty(str) {
-  if (!str || str == 'undefined' || str == 'null') {
+  if (!str || str === 'undefined' || str === 'null') {
     return ''
   }
   return str
