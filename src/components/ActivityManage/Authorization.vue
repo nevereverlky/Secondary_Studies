@@ -33,7 +33,8 @@
                   style="width: 100%"
                   cell-style="font-size: 13px">
                   <el-table-column>
-                    <template slot="header">
+                    <!-- eslint-disable-next-line -->
+                    <template slot="header" slot-scope="scope">
                       <div style="display: flex;flex-direction: row;justify-content: space-between">
                         <el-input
                           v-model="search_account"
@@ -107,7 +108,8 @@
                       label="开放导章权限"
                       prop="action"
                       width="100">
-                      <template>
+                      <!-- eslint-disable-next-line -->
+                      <template slot-scope="scope">
                         <el-switch
                           v-model="authority"
                           active-color="#1bc5bd"
@@ -118,7 +120,8 @@
                       label="操作"
                       prop="action"
                       width="100">
-                      <template>
+                      <!-- eslint-disable-next-line -->
+                      <template slot-scope="scope">
                         <button type="button" class="btn btn-sm btn-primary waves-effect waves-light m-1">修改</button>
                       </template>
                     </el-table-column>
@@ -174,21 +177,6 @@ export default {
           time: '2021.7.16 12:00 ~ 13:00'
         }
       ]
-    }
-  },
-  watch: {
-    // watch监视input输入值的变化,只要是watch变化了 search()就会被调用
-    search_account(newVal) {
-      this.handleSearch_account(newVal)
-    },
-    search_activename(newVal) {
-      this.handleSearch_activename(newVal)
-    },
-    search_organization(newVal) {
-      this.handleSearch_organization(newVal)
-    },
-    search_activeDate(newVal) {
-      this.handleSearch_activeDate(newVal)
     }
   },
   watch: {

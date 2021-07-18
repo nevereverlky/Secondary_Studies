@@ -13,7 +13,7 @@
                   <div class="d-inline-block align-items-center">
                     <nav>
                       <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><router-link tag="a" to="/activitychapter"><i class="fa fa-home" aria-hidden="true"></i></router-link></li>
+                        <li class="breadcrumb-item"><router-link tag="a" to="/activitychapter"><i class="fa fa-home" aria-hidden="true"/></router-link></li>
                         <li class="breadcrumb-item" aria-current="page">活动章模块</li>
                         <li class="breadcrumb-item active" aria-current="page">导入章</li>
                       </ol>
@@ -27,38 +27,38 @@
             <section class="content">
               <div class="col-12" style="display: flex">
                 <div class="col-md-4">
-                <div class="box box-solid bg-primary">
-                  <div class="box-header">
-                    <h6 class="box-title"><strong>第三届田径运动会开幕式活动礼仪</strong></h6>
+                  <div class="box box-solid bg-primary">
+                    <div class="box-header">
+                      <h6 class="box-title"><strong>第三届田径运动会开幕式活动礼仪</strong></h6>
 
-                  </div>
-                  <div class="box-body">
-                    <p><b>举办单位</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学生社团联合会</p>
-                    <p><b>活动地点</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C楼511</p>
-                    <p><b>申请章数</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="badge badge-success">512</span></p>
-                    <p><b>活动学期</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-2021学年第一学期</p>
-                    <p><b>扫章时间</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2021.7.14 12:00 ~ 13:00</p>
-                    <center><el-tooltip class="item" effect="dark" content="仅可导章一次" placement="bottom">
-                      <button class="btn btn-success btn-flat btn-sm center" @click="dialogchapers = true">Excel批量导章</button>
+                    </div>
+                    <div class="box-body">
+                      <p><b>举办单位</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;学生社团联合会</p>
+                      <p><b>活动地点</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C楼511</p>
+                      <p><b>申请章数</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="badge badge-success">512</span></p>
+                      <p><b>活动学期</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-2021学年第一学期</p>
+                      <p><b>扫章时间</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2021.7.14 12:00 ~ 13:00</p>
+                      <center><el-tooltip class="item" effect="dark" content="仅可导章一次" placement="bottom">
+                        <button class="btn btn-success btn-flat btn-sm center" @click="dialogchapers = true">Excel批量导章</button>
                       </el-tooltip></center>
+                    </div>
                   </div>
-                </div>
                 </div>
                 <div class="col-md-4">
-                <div class="box box-solid bg-primary">
-                  <div class="box-header">
-                    <h6 class="box-title"><strong>第三届田径运动会开幕式活动礼仪</strong></h6>
-                  </div>
-                  <div class="box-body">
-                    <p><b>举办单位</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;社团联</p>
-                    <p><b>活动地点</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C楼511</p>
-                    <p><b>申请章数</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="badge badge-success">512</span></p>
-                    <p><b>活动学期</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-2021学年第一学期</p>
-                    <p><b>扫章时间</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2021.7.14 12:00 ~ 13:00</p>
-                    <center><button class="btn btn-success btn-flat btn-sm center" style="cursor: not-allowed" disabled>Excel批量导章</button></center>
+                  <div class="box box-solid bg-primary">
+                    <div class="box-header">
+                      <h6 class="box-title"><strong>第三届田径运动会开幕式活动礼仪</strong></h6>
+                    </div>
+                    <div class="box-body">
+                      <p><b>举办单位</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;社团联</p>
+                      <p><b>活动地点</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;C楼511</p>
+                      <p><b>申请章数</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="badge badge-success">512</span></p>
+                      <p><b>活动学期</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2020-2021学年第一学期</p>
+                      <p><b>扫章时间</b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2021.7.14 12:00 ~ 13:00</p>
+                      <center><button class="btn btn-success btn-flat btn-sm center" style="cursor: not-allowed" disabled>Excel批量导章</button></center>
+                    </div>
                   </div>
                 </div>
-              </div>
                 <div class="col-md-4">
                   <div class="box box-solid bg-primary">
                     <div class="box-header">
@@ -95,14 +95,11 @@
             </section>
             <!-- /.content -->
 
-            <el-dialog title="Excel批量导章" :visible.sync="dialogchapers" :show-close="false" width="30%">
+            <el-dialog :visible.sync="dialogchapers" :show-close="false" title="Excel批量导章" width="30%">
               <div style="display: flex;justify-content: center">
                 <el-upload
                   ref="upload"
-                  class="upload-demo"
-                  action="#"
                   :limit="1"
-                  multiple accept=".xls,.xlsx"
                   :on-preview="handlePreview"
                   :on-change="handleChange"
                   :on-remove="handleRemove"
@@ -111,10 +108,14 @@
                   :file-list="fileList"
                   :show-file-list="fileList"
                   :auto-upload="false"
+                  class="upload-demo"
+                  action="#"
+                  multiple
+                  accept=".xls,.xlsx"
                   drag>
-                  <i class="el-icon-upload"></i>
+                  <i class="el-icon-upload"/>
                   <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
-                  <div class="el-upload__tip" slot="tip">只能上传一个.xls,.xlsx文件，且不超过10mb<br><b style="color: red">*</b>
+                  <div slot="tip" class="el-upload__tip">只能上传一个.xls,.xlsx文件，且不超过10mb<br><b style="color: red">*</b>
                     文件格式规定如下：<br>
                     <img src="../../assets/images/model.png" alt="">
                   </div>
@@ -122,7 +123,7 @@
               </div>
               <div slot="footer" class="dialog-footer">
                 <el-button size="small" @click="clearFiles">取 消</el-button>
-                <el-button style="margin-left: 10px;" size="small" type="primary" @click="submitUpload" plain>上传到服务器</el-button>
+                <el-button style="margin-left: 10px;" size="small" type="primary" plain @click="submitUpload">上传到服务器</el-button>
               </div>
             </el-dialog>
           </div>
@@ -136,14 +137,14 @@
 <script>
 // import request from '../../utils/request'
 export default {
-  name: 'activityChapter',
-  data () {
+  name: 'ActivityChapter',
+  data() {
     return {
       dialogchapers: false
     }
   },
   methods: {
-    clearFiles () {
+    clearFiles() {
       this.dialogchapers = false
     }
     // submitUpload() {

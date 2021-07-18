@@ -658,7 +658,7 @@ export default {
     handleUpdate(row) {
       this.reset()
       this.getTreeselect()
-      const userId = row.userId || this.ids
+      // const userId = row.userId || this.ids
       // getUser(userId).then(response => {
       //   this.form = response.data;
       //   this.postOptions = response.posts;
@@ -725,7 +725,7 @@ export default {
     },
     /** 导出按钮操作 */
     handleExport() {
-      const queryParams = this.queryParams
+      // const queryParams = this.queryParams
       this.$confirm('是否确认导出所有用户数据项?', '警告', {
         confirmButtonText: '确定',
         cancelButtonText: '取消',
