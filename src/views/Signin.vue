@@ -63,7 +63,7 @@ export default {
     login () {
       let _this = this
       if (this.loginForm.account === '' || this.loginForm.password === '') {
-        request.message(this, '账号或密码不能为空','warning');
+        request.message(this, '账号或密码不能为空', 'warning')
       } else {
         // request.$post('', {
         //   account: _this.loginForm.account,
@@ -72,15 +72,15 @@ export default {
         //   console.log(res.data);
         //   let token = res.data.data.token;
         //   request.localStorageSet('token', token);
-          setTimeout(function () {
-            // if (_this.$route.query.redirect) {
-            //   _this.$router.push({path: decodeURIComponent(_this.$route.query.redirect)}) //跳转到原页面
-            // } else {
-              _this.$router.push({name: 'Index'});//正常登录流程进入的页面
-//            }
-            location.reload();
-          }, 2000)
-          request.message(_this, message, 'success');
+        setTimeout(function () {
+          // if (_this.$route.query.redirect) {
+          //   _this.$router.push({path: decodeURIComponent(_this.$route.query.redirect)}) //跳转到原页面
+          // } else {
+          _this.$router.push({name: 'Index'})// 正常登录流程进入的页面
+          //            }
+          location.reload()
+        }, 2000)
+        request.message(_this, message, 'success')
         // }, _this)
       }
     }

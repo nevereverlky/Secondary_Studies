@@ -174,7 +174,7 @@
                     <el-table-column
                       prop="action"
                       width="200">
-                      <template slot="header" slot-scope="scope">
+                      <template slot="header">
                         <el-input
                           scope
                           style="width: 100%"
@@ -182,7 +182,7 @@
                           size="mini"
                           placeholder="输入姓名搜索"></el-input>
                       </template>
-                      <template slot-scope="scope">
+                      <template>
                         <button type="button" class="btn btn-outline btn-rounded btn-primary btn-sm mb-0">推送消息</button>
                       </template>
                     </el-table-column>
@@ -250,7 +250,7 @@
                   <el-table-column
                     prop="action"
                     width="200">
-                    <template slot="header" slot-scope="scope">
+                    <template slot="header">
                       <el-input
                         scope
                         style="width: 100%"
@@ -326,7 +326,7 @@
                     <el-table-column
                       prop="action"
                       width="200">
-                      <template slot="header" slot-scope="scope">
+                      <template slot="header">
                         <el-input
                           scope
                           style="width: 100%"
@@ -402,7 +402,7 @@
                     <el-table-column
                       prop="action"
                       width="200">
-                      <template slot="header" slot-scope="scope">
+                      <template slot="header">
                         <el-input
                           scope
                           style="width: 100%"
@@ -443,9 +443,9 @@
 // import request from '/../../utils/request'
 export default {
   name: 'OverallView',
-  data() {
+  data () {
     return {
-      search_activename: '', //input的值
+      search_activename: '', // input的值
       search_name: '',
       activeData: [
         {
@@ -479,38 +479,38 @@ export default {
       ],
       currentPage: 1, // 当前页码
       total: 20, // 总条数
-      activeData_length: 0, //总条目数
-      pageSize: 10, // 每页的数据条数
-    };
+      activeData_length: 0, // 总条目数
+      pageSize: 10 // 每页的数据条数
+    }
   },
   methods: {
-    //每页条数改变时触发 选择一页显示多少行
-    handleSizeChange(val) {
-      console.log(`每页 ${val} 条`);
-      this.currentPage = 1;
-      this.pageSize = val;
+    // 每页条数改变时触发 选择一页显示多少行
+    handleSizeChange (val) {
+      console.log(`每页 ${val} 条`)
+      this.currentPage = 1
+      this.pageSize = val
     },
-    //当前页改变时触发 跳转其他页
-    handleCurrentChange(val) {
-      console.log(`当前页: ${val}`);
-      this.currentPage = val;
+    // 当前页改变时触发 跳转其他页
+    handleCurrentChange (val) {
+      console.log(`当前页: ${val}`)
+      this.currentPage = val
     },
-    handleSearch(val) {
-      let _this = this;
-      let search = val;
-      this.search_equipName = search;
-      _this.currentPage = 1;
+    handleSearch (val) {
+      let _this = this
+      let search = val
+      this.search_equipName = search
+      _this.currentPage = 1
       // this.finalShow = this.activeData.filter(
       //   (data) =>
       //     !search || data.activityname.toString().includes(search.toString())
       // );
       // this.activeData_length = this.finalShow.length;
-    },
+    }
   },
   watch: {
-    //watch监视input输入值的变化,只要是watch变化了 search()就会被调用
-    search_equipName(newVal) {
-      this.handleSearch(newVal);
+    // watch监视input输入值的变化,只要是watch变化了 search()就会被调用
+    search_equipName (newVal) {
+      this.handleSearch(newVal)
     }
   }
 }

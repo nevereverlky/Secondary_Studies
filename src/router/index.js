@@ -17,7 +17,7 @@ const Signin = () => import('../views/Signin.vue')
 
 Vue.use(Router)
 
-const router =  new Router({
+const router = new Router({
   routes: [
     {
       path: '/',
@@ -71,7 +71,7 @@ const router =  new Router({
       ]
     }
   ]
-});
+})
 
 // // 全局路由守卫
 // router.beforeEach((to, from, next) => {

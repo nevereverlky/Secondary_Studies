@@ -120,22 +120,21 @@
 <script>
 export default {
   name: 'Topbar',
-  data() {
+  data () {
     return {
-    };
+    }
   },
   methods: {
     tologin () {
-      let _this = this;
+      let _this = this
       // request.$post('/user/logout', {}, (res) => {
       //   console.log(res.data);
       //   request.localStorageSet('token', null);
       setTimeout(function () {
-        _this.$router.push('/signin');
+        _this.$router.push('/signin')
         // location.reload();
       }, 3000)
       // let message = res.data.message;
-      request.message(_this, message, 'success');
       // }, _this)
     }
   }

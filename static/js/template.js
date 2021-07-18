@@ -1,10 +1,11 @@
-//[Master Javascript]
+// [Master Javascript]
 
-//Project:	Aqua Admin - Responsive Admin Template
-//Primary use:	Aqua Admin - Responsive Admin Template
+// eslint-disable-next-line no-tabs
+// Project:	Aqua Admin - Responsive Admin Template
+// eslint-disable-next-line no-tabs
+// Primary use:	Aqua Admin - Responsive Admin Template
 
-//should be included in all pages. It controls some layout
-
+// should be included in all pages. It controls some layout
 
 // Make sure jQuery has been loaded
 if (typeof jQuery === 'undefined') {
@@ -20,38 +21,37 @@ if (typeof jQuery === 'undefined') {
 //  Configure any options by passing data-option="value"
 //  to the body tag.
 
-
-
-+function ($) {
+// eslint-disable-next-line no-unused-expressions
++(function ($) {
   'use strict'
 
   var DataKey = 'Aquaadmin.layout'
 
   var Default = {
-    slimscroll : true,
+    slimscroll: true,
     resetHeight: true
   }
 
   var Selector = {
-    wrapper       : '.wrapper',
+    wrapper: '.wrapper',
     contentWrapper: '.content-wrapper',
-    layoutBoxed   : '.layout-boxed',
-    mainFooter    : '.main-footer',
-    mainHeader    : '.main-header',
-    sidebar       : '.sidebar',
+    layoutBoxed: '.layout-boxed',
+    mainFooter: '.main-footer',
+    mainHeader: '.main-header',
+    sidebar: '.sidebar',
     controlSidebar: '.control-sidebar',
-    fixed         : '.fixed',
-    sidebarMenu   : '.sidebar-menu',
-    logo          : '.main-header .logo'
+    fixed: '.fixed',
+    sidebarMenu: '.sidebar-menu',
+    logo: '.main-header .logo'
   }
 
   var ClassName = {
-    fixed         : 'fixed',
+    fixed: 'fixed',
     holdTransition: 'hold-transition'
   }
 
   var Layout = function (options) {
-    this.options      = options
+    this.options = options
     this.bindedResize = false
     this.activate()
   }
@@ -64,7 +64,7 @@ if (typeof jQuery === 'undefined') {
 
     if (this.options.resetHeight) {
       $('body, html, ' + Selector.wrapper).css({
-        'height'    : 'auto',
+        'height': 'auto',
         'min-height': '100%'
       })
     }
@@ -99,9 +99,9 @@ if (typeof jQuery === 'undefined') {
     $(Selector.layoutBoxed + ' > ' + Selector.wrapper).css('overflow', 'hidden')
 
     // Get window height and the wrapper height
-    var footerHeight  = $(Selector.mainFooter).outerHeight() || 0
-    var neg           = $(Selector.mainHeader).outerHeight() + footerHeight
-    var windowHeight  = $(window).height()
+    var footerHeight = $(Selector.mainFooter).outerHeight() || 0
+    var neg = $(Selector.mainHeader).outerHeight() + footerHeight
+    var windowHeight = $(window).height()
     var sidebarHeight = $(Selector.sidebar).height() || 0
 
     // Set the min-height of the content and sidebar based on
@@ -122,8 +122,7 @@ if (typeof jQuery === 'undefined') {
       // Fix for the control sidebar height
       var $controlSidebar = $(Selector.controlSidebar)
       if (typeof $controlSidebar !== 'undefined') {
-        if ($controlSidebar.height() > postSetHeight)
-          $(Selector.contentWrapper).css('min-height', $controlSidebar.height())
+        if ($controlSidebar.height() > postSetHeight) { $(Selector.contentWrapper).css('min-height', $controlSidebar.height()) }
       }
     }
   }
@@ -146,26 +145,26 @@ if (typeof jQuery === 'undefined') {
         // Add slimscroll
         $(Selector.sidebar).slimScroll({
           height: ($(window).height() - $(Selector.mainHeader).height()) + 'px',
-          color : 'rgba(0,0,0,0.2)',
-          size  : '3px'
+          color: 'rgba(0,0,0,0.2)',
+          size: '3px'
         })
       }
     }
   }
 
   // Plugin Definition
-  function Plugin(option) {
+  function Plugin (option) {
     return this.each(function () {
       var $this = $(this)
-      var data  = $this.data(DataKey)
+      var data = $this.data(DataKey)
 
       if (!data) {
         var options = $.extend({}, Default, $this.data(), typeof option === 'object' && option)
         $this.data(DataKey, (data = new Layout(options)))
       }
 
-      if (typeof option == 'string') {
-        if (typeof data[option] == 'undefined') {
+      if (typeof option === 'string') {
+        if (typeof data[option] === 'undefined') {
           throw new Error('No method named ' + option)
         }
         data[option]()
@@ -175,7 +174,7 @@ if (typeof jQuery === 'undefined') {
 
   var old = $.fn.layout
 
-  $.fn.layout            = Plugin
+  $.fn.layout = Plugin
   $.fn.layout.Constuctor = Layout
 
   // No conflict mode
@@ -187,8 +186,9 @@ if (typeof jQuery === 'undefined') {
   // Layout DATA-API
   $(window).on('load', function () {
     Plugin.call($('body'))
-  });
-}(jQuery)  // End of use strict
+  })
+// eslint-disable-next-line no-undef
+}(jQuery)) + // End of use strict
 
 /* PushMenu()
  * Adds the push menu functionality to the sidebar.
@@ -197,40 +197,40 @@ if (typeof jQuery === 'undefined') {
  *          or add [data-toggle="push-menu"] to any button
  *          Pass any option as data-option="value"
  */
-+function ($) {
+(function ($) {
   'use strict'
 
   var DataKey = 'Aquaadmin.pushmenu'
 
   var Default = {
-    collapseScreenSize   : 767,
-    expandOnHover        : false,
+    collapseScreenSize: 767,
+    expandOnHover: false,
     expandTransitionDelay: 200
   }
 
   var Selector = {
-    collapsed     : '.sidebar-collapse',
-    open          : '.sidebar-open',
-    mainSidebar   : '.main-sidebar',
+    collapsed: '.sidebar-collapse',
+    open: '.sidebar-open',
+    mainSidebar: '.main-sidebar',
     contentWrapper: '.content-wrapper',
-    searchInput   : '.sidebar-form .form-control',
-    button        : '[data-toggle="push-menu"]',
-    mini          : '.sidebar-mini',
-    expanded      : '.sidebar-expanded-on-hover',
-    layoutFixed   : '.fixed'
+    searchInput: '.sidebar-form .form-control',
+    button: '[data-toggle="push-menu"]',
+    mini: '.sidebar-mini',
+    expanded: '.sidebar-expanded-on-hover',
+    layoutFixed: '.fixed'
   }
 
   var ClassName = {
-    collapsed    : 'sidebar-collapse',
-    open         : 'sidebar-open',
-    mini         : 'sidebar-mini',
-    expanded     : 'sidebar-expanded-on-hover',
+    collapsed: 'sidebar-collapse',
+    open: 'sidebar-open',
+    mini: 'sidebar-mini',
+    expanded: 'sidebar-expanded-on-hover',
     expandFeature: 'sidebar-mini-expand-feature',
-    layoutFixed  : 'fixed'
+    layoutFixed: 'fixed'
   }
 
   var Event = {
-    expanded : 'expanded.pushMenu',
+    expanded: 'expanded.pushMenu',
     collapsed: 'collapsed.pushMenu'
   }
 
@@ -241,8 +241,8 @@ if (typeof jQuery === 'undefined') {
   }
 
   PushMenu.prototype.init = function () {
-    if (this.options.expandOnHover
-      || ($('body').is(Selector.mini + Selector.layoutFixed))) {
+    if (this.options.expandOnHover ||
+      ($('body').is(Selector.mini + Selector.layoutFixed))) {
       this.expandOnHover()
       $('body').addClass(ClassName.expandFeature)
     }
@@ -262,7 +262,7 @@ if (typeof jQuery === 'undefined') {
 
   PushMenu.prototype.toggle = function () {
     var windowWidth = $(window).width()
-    var isOpen      = !$('body').hasClass(ClassName.collapsed)
+    var isOpen = !$('body').hasClass(ClassName.collapsed)
 
     if (windowWidth <= this.options.collapseScreenSize) {
       isOpen = $('body').hasClass(ClassName.open)
@@ -281,8 +281,7 @@ if (typeof jQuery === 'undefined') {
     if (windowWidth > this.options.collapseScreenSize) {
       $('body').removeClass(ClassName.collapsed)
         .trigger($.Event(Event.expanded))
-    }
-    else {
+    } else {
       $('body').addClass(ClassName.open)
         .trigger($.Event(Event.expanded))
     }
@@ -301,8 +300,8 @@ if (typeof jQuery === 'undefined') {
 
   PushMenu.prototype.expandOnHover = function () {
     $(Selector.mainSidebar).hover(function () {
-      if ($('body').is(Selector.mini + Selector.collapsed)
-        && $(window).width() > this.options.collapseScreenSize) {
+      if ($('body').is(Selector.mini + Selector.collapsed) &&
+        $(window).width() > this.options.collapseScreenSize) {
         this.expand()
       }
     }.bind(this), function () {
@@ -327,23 +326,23 @@ if (typeof jQuery === 'undefined') {
   }
 
   // PushMenu Plugin Definition
-  function Plugin(option) {
+  function Plugin (option) {
     return this.each(function () {
       var $this = $(this)
-      var data  = $this.data(DataKey)
+      var data = $this.data(DataKey)
 
       if (!data) {
         var options = $.extend({}, Default, $this.data(), typeof option === 'object' && option)
         $this.data(DataKey, (data = new PushMenu(options)))
       }
 
-      if (option == 'toggle') data.toggle()
+      if (option === 'toggle') data.toggle()
     })
   }
 
   var old = $.fn.pushMenu
 
-  $.fn.pushMenu             = Plugin
+  $.fn.pushMenu = Plugin
   $.fn.pushMenu.Constructor = PushMenu
 
   // No Conflict Mode
@@ -360,8 +359,8 @@ if (typeof jQuery === 'undefined') {
   $(window).on('load', function () {
     Plugin.call($(Selector.button))
   })
-}(jQuery) // End of use strict
-
+// eslint-disable-next-line no-undef
+}(jQuery)) + // End of use strict
 
 /* Tree()
  * Converts a nested list into a multilevel
@@ -371,26 +370,26 @@ if (typeof jQuery === 'undefined') {
  *         or add [data-widget="tree"] to the ul element
  *         Pass any option as data-option="value"
  */
-+function ($) {
+(function ($) {
   'use strict'
 
   var DataKey = 'Aquaadmin.tree'
 
   var Default = {
     animationSpeed: 500,
-    accordion     : true,
-    followLink    : false,
-    trigger       : '.treeview a'
+    accordion: true,
+    followLink: false,
+    trigger: '.treeview a'
   }
 
   var Selector = {
-    tree        : '.tree',
-    treeview    : '.treeview',
+    tree: '.tree',
+    treeview: '.treeview',
     treeviewMenu: '.treeview-menu',
-    open        : '.menu-open, .active',
-    li          : 'li',
-    data        : '[data-widget="tree"]',
-    active      : '.active'
+    open: '.menu-open, .active',
+    li: 'li',
+    data: '[data-widget="tree"]',
+    active: '.active'
   }
 
   var ClassName = {
@@ -400,7 +399,7 @@ if (typeof jQuery === 'undefined') {
 
   var Event = {
     collapsed: 'collapsed.tree',
-    expanded : 'expanded.tree'
+    expanded: 'expanded.tree'
   }
 
   // Tree Class Definition
@@ -417,14 +416,14 @@ if (typeof jQuery === 'undefined') {
 
   Tree.prototype.toggle = function (link, event) {
     var treeviewMenu = link.next(Selector.treeviewMenu)
-    var parentLi     = link.parent()
-    var isOpen       = parentLi.hasClass(ClassName.open)
+    var parentLi = link.parent()
+    var isOpen = parentLi.hasClass(ClassName.open)
 
     if (!parentLi.is(Selector.treeview)) {
       return
     }
 
-    if (!this.options.followLink || link.attr('href') == '#') {
+    if (!this.options.followLink || link.attr('href') === '#') {
       event.preventDefault()
     }
 
@@ -440,7 +439,7 @@ if (typeof jQuery === 'undefined') {
 
     if (this.options.accordion) {
       var openMenuLi = parent.siblings(Selector.open)
-      var openTree   = openMenuLi.children(Selector.treeviewMenu)
+      var openTree = openMenuLi.children(Selector.treeviewMenu)
       this.collapse(openTree, openMenuLi)
     }
 
@@ -472,10 +471,10 @@ if (typeof jQuery === 'undefined') {
   }
 
   // Plugin Definition
-  function Plugin(option) {
+  function Plugin (option) {
     return this.each(function () {
       var $this = $(this)
-      var data  = $this.data(DataKey)
+      var data = $this.data(DataKey)
 
       if (!data) {
         var options = $.extend({}, Default, $this.data(), typeof option === 'object' && option)
@@ -486,7 +485,7 @@ if (typeof jQuery === 'undefined') {
 
   var old = $.fn.tree
 
-  $.fn.tree             = Plugin
+  $.fn.tree = Plugin
   $.fn.tree.Constructor = Tree
 
   // No Conflict Mode
@@ -501,9 +500,8 @@ if (typeof jQuery === 'undefined') {
       Plugin.call($(this))
     })
   })
-
-}(jQuery) // End of use strict
-
+// eslint-disable-next-line no-undef
+}(jQuery)) + // End of use strict
 
 /* ControlSidebar()
  * Toggles the state of the control sidebar
@@ -512,7 +510,7 @@ if (typeof jQuery === 'undefined') {
  *         or add [data-toggle="control-sidebar"] to the trigger
  *         Pass any option as data-option="value"
  */
-+function ($) {
+(function ($) {
   'use strict'
 
   var DataKey = 'Aquaadmin.controlsidebar'
@@ -523,28 +521,28 @@ if (typeof jQuery === 'undefined') {
 
   var Selector = {
     sidebar: '.control-sidebar',
-    data   : '[data-toggle="control-sidebar"]',
-    open   : '.control-sidebar-open',
-    bg     : '.control-sidebar-bg',
+    data: '[data-toggle="control-sidebar"]',
+    open: '.control-sidebar-open',
+    bg: '.control-sidebar-bg',
     wrapper: '.wrapper',
     content: '.content-wrapper',
-    boxed  : '.layout-boxed'
+    boxed: '.layout-boxed'
   }
 
   var ClassName = {
-    open : 'control-sidebar-open',
+    open: 'control-sidebar-open',
     fixed: 'fixed'
   }
 
   var Event = {
     collapsed: 'collapsed.controlsidebar',
-    expanded : 'expanded.controlsidebar'
+    expanded: 'expanded.controlsidebar'
   }
 
   // ControlSidebar Class Definition
   var ControlSidebar = function (element, options) {
-    this.element         = element
-    this.options         = options
+    this.element = element
+    this.options = options
     this.hasBindedResize = false
 
     this.init()
@@ -601,28 +599,28 @@ if (typeof jQuery === 'undefined') {
   ControlSidebar.prototype._fixForBoxed = function (bg) {
     bg.css({
       position: 'absolute',
-      height  : $(Selector.wrapper).height()
+      height: $(Selector.wrapper).height()
     })
   }
 
   // Plugin Definition
-  function Plugin(option) {
+  function Plugin (option) {
     return this.each(function () {
       var $this = $(this)
-      var data  = $this.data(DataKey)
+      var data = $this.data(DataKey)
 
       if (!data) {
         var options = $.extend({}, Default, $this.data(), typeof option === 'object' && option)
         $this.data(DataKey, (data = new ControlSidebar($this, options)))
       }
 
-      if (typeof option == 'string') data.toggle()
+      if (typeof option === 'string') data.toggle()
     })
   }
 
   var old = $.fn.controlSidebar
 
-  $.fn.controlSidebar             = Plugin
+  $.fn.controlSidebar = Plugin
   $.fn.controlSidebar.Constructor = ControlSidebar
 
   // No Conflict Mode
@@ -636,9 +634,8 @@ if (typeof jQuery === 'undefined') {
     if (event) event.preventDefault()
     Plugin.call($(this), 'toggle')
   })
-
-}(jQuery) // End of use strict
-
+// eslint-disable-next-line no-undef
+}(jQuery)) + // End of use strict
 
 /* BoxWidget()
  * Adds box widget functions to boxes.
@@ -647,26 +644,26 @@ if (typeof jQuery === 'undefined') {
  *         This plugin auto activates on any element using the `.box` class
  *         Pass any option as data-option="value"
  */
-+function ($) {
+(function ($) {
   'use strict'
 
   var DataKey = 'Aquaadmin.boxwidget'
 
   var Default = {
-    animationSpeed : 500,
+    animationSpeed: 500,
     collapseTrigger: '[data-widget="collapse"]',
-    removeTrigger  : '[data-widget="remove"]',
-    collapseIcon   : 'fa-minus',
-    expandIcon     : 'fa-plus',
-    removeIcon     : 'fa-times'
+    removeTrigger: '[data-widget="remove"]',
+    collapseIcon: 'fa-minus',
+    expandIcon: 'fa-plus',
+    removeIcon: 'fa-times'
   }
 
   var Selector = {
-    data     : '.box',
+    data: '.box',
     collapsed: '.collapsed-box',
-    body     : '.box-body',
-    footer   : '.box-footer',
-    tools    : '.box-tools'
+    body: '.box-body',
+    footer: '.box-footer',
+    tools: '.box-tools'
   }
 
   var ClassName = {
@@ -675,8 +672,8 @@ if (typeof jQuery === 'undefined') {
 
   var Event = {
     collapsed: 'collapsed.boxwidget',
-    expanded : 'expanded.boxwidget',
-    removed  : 'removed.boxwidget'
+    expanded: 'expanded.boxwidget',
+    removed: 'removed.boxwidget'
   }
 
   // BoxWidget Class Definition
@@ -699,8 +696,8 @@ if (typeof jQuery === 'undefined') {
 
   BoxWidget.prototype.expand = function () {
     var expandedEvent = $.Event(Event.expanded)
-    var collapseIcon  = this.options.collapseIcon
-    var expandIcon    = this.options.expandIcon
+    var collapseIcon = this.options.collapseIcon
+    var expandIcon = this.options.expandIcon
 
     $(this.element).removeClass(ClassName.collapsed)
 
@@ -718,8 +715,8 @@ if (typeof jQuery === 'undefined') {
 
   BoxWidget.prototype.collapse = function () {
     var collapsedEvent = $.Event(Event.collapsed)
-    var collapseIcon   = this.options.collapseIcon
-    var expandIcon     = this.options.expandIcon
+    var collapseIcon = this.options.collapseIcon
+    var expandIcon = this.options.expandIcon
 
     $(this.element)
       .find(Selector.tools)
@@ -760,18 +757,18 @@ if (typeof jQuery === 'undefined') {
   }
 
   // Plugin Definition
-  function Plugin(option) {
+  function Plugin (option) {
     return this.each(function () {
       var $this = $(this)
-      var data  = $this.data(DataKey)
+      var data = $this.data(DataKey)
 
       if (!data) {
         var options = $.extend({}, Default, $this.data(), typeof option === 'object' && option)
         $this.data(DataKey, (data = new BoxWidget($this, options)))
       }
 
-      if (typeof option == 'string') {
-        if (typeof data[option] == 'undefined') {
+      if (typeof option === 'string') {
+        if (typeof data[option] === 'undefined') {
           throw new Error('No method named ' + option)
         }
         data[option]()
@@ -781,7 +778,7 @@ if (typeof jQuery === 'undefined') {
 
   var old = $.fn.boxWidget
 
-  $.fn.boxWidget             = Plugin
+  $.fn.boxWidget = Plugin
   $.fn.boxWidget.Constructor = BoxWidget
 
   // No Conflict Mode
@@ -796,662 +793,25 @@ if (typeof jQuery === 'undefined') {
       Plugin.call($(this))
     })
   })
-
-}(jQuery) // End of use strict
-
-
-/* TodoList()
- * Converts a list into a todoList.
- *
- * @Usage: $('.my-list').todoList(options)
- *         or add [data-widget="todo-list"] to the ul element
- *         Pass any option as data-option="value"
- */
-+function ($) {
-  'use strict'
-
-  var DataKey = 'Aquaadmin.todolist'
-
-  var Default = {
-    iCheck   : false,
-    onCheck  : function () {
-    },
-    onUnCheck: function () {
-    }
-  }
-
-  var Selector = {
-    data: '[data-widget="todo-list"]'
-  }
-
-  var ClassName = {
-    done: 'done'
-  }
-
-  // TodoList Class Definition
-  var TodoList = function (element, options) {
-    this.element = element
-    this.options = options
-
-    this._setUpListeners()
-  }
-
-  TodoList.prototype.toggle = function (item) {
-    item.parents(Selector.li).first().toggleClass(ClassName.done)
-    if (!item.prop('checked')) {
-      this.unCheck(item)
-      return
-    }
-
-    this.check(item)
-  }
-
-  TodoList.prototype.check = function (item) {
-    this.options.onCheck.call(item)
-  }
-
-  TodoList.prototype.unCheck = function (item) {
-    this.options.onUnCheck.call(item)
-  }
-
-  // Private
-
-  TodoList.prototype._setUpListeners = function () {
-    var that = this
-    $(this.element).on('change ifChanged', 'input:checkbox', function () {
-      that.toggle($(this))
-    })
-  }
-
-  // Plugin Definition
-  function Plugin(option) {
-    return this.each(function () {
-      var $this = $(this)
-      var data  = $this.data(DataKey)
-
-      if (!data) {
-        var options = $.extend({}, Default, $this.data(), typeof option === 'object' && option)
-        $this.data(DataKey, (data = new TodoList($this, options)))
-      }
-
-      if (typeof data == 'string') {
-        if (typeof data[option] == 'undefined') {
-          throw new Error('No method named ' + option)
-        }
-        data[option]()
-      }
-    })
-  }
-
-  var old = $.fn.todoList
-
-  $.fn.todoList         = Plugin
-  $.fn.todoList.Constructor = TodoList
-
-  // No Conflict Mode
-  $.fn.todoList.noConflict = function () {
-    $.fn.todoList = old
-    return this
-  }
-
-  // TodoList Data API
-  $(window).on('load', function () {
-    $(Selector.data).each(function () {
-      Plugin.call($(this))
-    })
-  })
-
-}(jQuery) // End of use strict
-
-
-/* DirectChat()
- * Toggles the state of the control sidebar
- *
- * @Usage: $('#my-chat-box').directChat()
- *         or add [data-widget="direct-chat"] to the trigger
- */
-+function ($) {
-  'use strict'
-
-  var DataKey = 'Aquaadmin.directchat'
-
-  var Selector = {
-    data: '[data-widget="chat-pane-toggle"]',
-    box : '.direct-chat'
-  }
-
-  var ClassName = {
-    open: 'direct-chat-contacts-open'
-  }
-
-  // DirectChat Class Definition
-  var DirectChat = function (element) {
-    this.element = element
-  }
-
-  DirectChat.prototype.toggle = function ($trigger) {
-    $trigger.parents(Selector.box).first().toggleClass(ClassName.open)
-  }
-
-  // Plugin Definition
-  function Plugin(option) {
-    return this.each(function () {
-      var $this = $(this)
-      var data  = $this.data(DataKey)
-
-      if (!data) {
-        $this.data(DataKey, (data = new DirectChat($this)))
-      }
-
-      if (typeof option == 'string') data.toggle($this)
-    })
-  }
-
-  var old = $.fn.directChat
-
-  $.fn.directChat             = Plugin
-  $.fn.directChat.Constructor = DirectChat
-
-  // No Conflict Mode
-  $.fn.directChat.noConflict = function () {
-    $.fn.directChat = old
-    return this
-  }
-
-  // DirectChat Data API
-  $(document).on('click', Selector.data, function (event) {
-    if (event) event.preventDefault()
-    Plugin.call($(this), 'toggle')
-  })
-
-  // Slim scrolling
-
-  $('.inner-content-div').slimScroll({
-    height: '200'
-  });
-
-  $('.sm-scrol').slimScroll({
-    height: '250'
-  });
-
-  $('.direct-chat-messages').slimScroll({
-    height: '310'
-  });
-
-
-  $(".search-box a, .search-box .app-search .srh-btn").on('click', function() {
-    $(".app-search").toggle(200);
-  });
-
-
-
-  // Close
-  //
-  $(document).on('click', '.box-btn-close', function() {
-    $(this).parents('.box').fadeOut(600, function() {
-      if ($(this).parent().children().length == 1) {
-        $(this).parent().remove();
-      }
-      else {
-        $(this).remove();
-      }
-    });
-  });
-
-
-
-  // Slide up/down
-  //
-  $(document).on('click', '.box-btn-slide', function(){
-    $(this).toggleClass('rotate-180').parents('.box').find('.box-content, .box-body').slideToggle();
-  });
-
-
-
-  // Maximize
-  //
-  $(document).on('click', '.box-btn-maximize', function(){
-    $(this).parents('.box').toggleClass('box-maximize').removeClass('box-fullscreen');
-  });
-
-
-
-  // Fullscreen
-  //
-  $(document).on('click', '.box-btn-fullscreen', function(){
-    $(this).parents('.box').toggleClass('box-fullscreen').removeClass('box-maximize');
-  });
-
-
-  // Disable demonstrative links!
-  //
-  $(document).on('click', 'a[href="#"]', function(e){
-    e.preventDefault();
-  });
-
-
-  // This is for the innerleft sidebar
-  $(".open-left-block").on('click', function() {
-    $('.left-block').toggleClass('open-panel');
-    $('.open-left-block').toggleClass('mdi-menu');
-  });
-
-
-  // Upload
-  //
-  $(document).on('click', '.file-browser', function() {
-    var $browser = $(this);
-    if ( $browser.hasClass('form-control') ) {
-      setTimeout(function(){
-        $browser.closest('.file-group').find('[type="file"]').trigger('click');
-      },300);
-    }
-    else {
-      var file = $browser.closest('.file-group').find('[type="file"]');
-      file.on( 'click', function(e) {
-        e.stopPropagation();
-      });
-      file.trigger('click');
-    }
-  });
-
-  // Event to change file name after file selection
-  $(document).on('change', '.file-group [type="file"]', function(){
-    var input = $(this)[0];
-    var len = input.files.length;
-    var filename = '';
-
-    for (var i = 0; i < len; ++i) {
-      filename += input.files.item(i).name + ', ';
-    }
-    filename = filename.substr(0, filename.length-2);
-    $(this).closest('.file-group').find('.file-value').val(filename).text(filename).focus();
-  });
-
-  // Update file name for bootstrap custom file upload
-  $(document).on('change', '.custom-file-input', function(){
-    var filename = $(this).val().split('\\').pop();
-    $(this).next('.custom-file-control').attr('data-input-value', filename);
-  });
-  $('.custom-file-control:not([data-input-value])').attr('data-input-value', 'Choose file...');
-
-
-
-  /* The todo list plugin */
-  $('.todo-list').todoList({
-    onCheck  : function () {
-      window.console.log($(this), 'The element has been checked');
-    },
-    onUnCheck: function () {
-      window.console.log($(this), 'The element has been unchecked');
-    }
-  });
-
-
-}(jQuery) // End of use strict
+// eslint-disable-next-line no-undef
+}(jQuery)) + // End of use strict
 
 // Fullscreen
+// eslint-disable-next-line no-undef
 $(function () {
   'use strict'
 
+  // eslint-disable-next-line no-undef
   $('[data-provide~="fullscreen"]').on('click', function () {
-    screenfull.toggle($('#container')[0]);
-  });
-
-}); // End of use strict
-
+    // eslint-disable-next-line no-undef
+    screenfull.toggle($('#container')[0])
+  })
+}) // End of use strict
 
 // feather icon
+// eslint-disable-next-line no-undef
 $(function () {
   'use strict'
-  feather.replace();
-}); // End of use strict
-
-
-+function ($) {
-  'use strict'
-
-// Dynamic active menu
-  var path = window.location.pathname.split("/").pop();
-  var target = $('.sidebar-menu li a[href="'+path+'"]');
-  target.parent().addClass('active');
-  $('.sidebar-menu li.active').parents('li').addClass('active');
-
-}(jQuery) // End of use strict
-
-
-/*!
- * Waves v0.6.4
- * http://fian.my.id/Waves
- *
- * Copyright 2014 Alfiana E. Sibuea and other contributors
- * Released under the MIT license
- * https://github.com/fians/Waves/blob/master/LICENSE
- */
-
-;(function(window) {
-  'use strict';
-
-  var Waves = Waves || {};
-  var $$ = document.querySelectorAll.bind(document);
-
-  // Find exact position of element
-  function isWindow(obj) {
-    return obj !== null && obj === obj.window;
-  }
-
-  function getWindow(elem) {
-    return isWindow(elem) ? elem : elem.nodeType === 9 && elem.defaultView;
-  }
-
-  function offset(elem) {
-    var docElem, win,
-      box = {top: 0, left: 0},
-      doc = elem && elem.ownerDocument;
-
-    docElem = doc.documentElement;
-
-    if (typeof elem.getBoundingClientRect !== typeof undefined) {
-      box = elem.getBoundingClientRect();
-    }
-    win = getWindow(doc);
-    return {
-      top: box.top + win.pageYOffset - docElem.clientTop,
-      left: box.left + win.pageXOffset - docElem.clientLeft
-    };
-  }
-
-  function convertStyle(obj) {
-    var style = '';
-
-    for (var a in obj) {
-      if (obj.hasOwnProperty(a)) {
-        style += (a + ':' + obj[a] + ';');
-      }
-    }
-
-    return style;
-  }
-
-  var Effect = {
-
-    // Effect delay
-    duration: 750,
-
-    show: function(e, element) {
-
-      // Disable right click
-      if (e.button === 2) {
-        return false;
-      }
-
-      var el = element || this;
-
-      // Create ripple
-      var ripple = document.createElement('div');
-      ripple.className = 'waves-ripple';
-      el.appendChild(ripple);
-
-      // Get click coordinate and element witdh
-      var pos         = offset(el);
-      var relativeY   = (e.pageY - pos.top);
-      var relativeX   = (e.pageX - pos.left);
-      var scale       = 'scale('+((el.clientWidth / 100) * 10)+')';
-
-      // Support for touch devices
-      if ('touches' in e) {
-        relativeY   = (e.touches[0].pageY - pos.top);
-        relativeX   = (e.touches[0].pageX - pos.left);
-      }
-
-      // Attach data to element
-      ripple.setAttribute('data-hold', Date.now());
-      ripple.setAttribute('data-scale', scale);
-      ripple.setAttribute('data-x', relativeX);
-      ripple.setAttribute('data-y', relativeY);
-
-      // Set ripple position
-      var rippleStyle = {
-        'top': relativeY+'px',
-        'left': relativeX+'px'
-      };
-
-      ripple.className = ripple.className + ' waves-notransition';
-      ripple.setAttribute('style', convertStyle(rippleStyle));
-      ripple.className = ripple.className.replace('waves-notransition', '');
-
-      // Scale the ripple
-      rippleStyle['-webkit-transform'] = scale;
-      rippleStyle['-moz-transform'] = scale;
-      rippleStyle['-ms-transform'] = scale;
-      rippleStyle['-o-transform'] = scale;
-      rippleStyle.transform = scale;
-      rippleStyle.opacity   = '1';
-
-      rippleStyle['-webkit-transition-duration'] = Effect.duration + 'ms';
-      rippleStyle['-moz-transition-duration']    = Effect.duration + 'ms';
-      rippleStyle['-o-transition-duration']      = Effect.duration + 'ms';
-      rippleStyle['transition-duration']         = Effect.duration + 'ms';
-
-      rippleStyle['-webkit-transition-timing-function'] = 'cubic-bezier(0.250, 0.460, 0.450, 0.940)';
-      rippleStyle['-moz-transition-timing-function']    = 'cubic-bezier(0.250, 0.460, 0.450, 0.940)';
-      rippleStyle['-o-transition-timing-function']      = 'cubic-bezier(0.250, 0.460, 0.450, 0.940)';
-      rippleStyle['transition-timing-function']         = 'cubic-bezier(0.250, 0.460, 0.450, 0.940)';
-
-      ripple.setAttribute('style', convertStyle(rippleStyle));
-    },
-
-    hide: function(e) {
-      TouchHandler.touchup(e);
-
-      var el = this;
-      var width = el.clientWidth * 1.4;
-
-      // Get first ripple
-      var ripple = null;
-      var ripples = el.getElementsByClassName('waves-ripple');
-      if (ripples.length > 0) {
-        ripple = ripples[ripples.length - 1];
-      } else {
-        return false;
-      }
-
-      var relativeX   = ripple.getAttribute('data-x');
-      var relativeY   = ripple.getAttribute('data-y');
-      var scale       = ripple.getAttribute('data-scale');
-
-      // Get delay beetween mousedown and mouse leave
-      var diff = Date.now() - Number(ripple.getAttribute('data-hold'));
-      var delay = 350 - diff;
-
-      if (delay < 0) {
-        delay = 0;
-      }
-
-      // Fade out ripple after delay
-      setTimeout(function() {
-        var style = {
-          'top': relativeY+'px',
-          'left': relativeX+'px',
-          'opacity': '0',
-
-          // Duration
-          '-webkit-transition-duration': Effect.duration + 'ms',
-          '-moz-transition-duration': Effect.duration + 'ms',
-          '-o-transition-duration': Effect.duration + 'ms',
-          'transition-duration': Effect.duration + 'ms',
-          '-webkit-transform': scale,
-          '-moz-transform': scale,
-          '-ms-transform': scale,
-          '-o-transform': scale,
-          'transform': scale,
-        };
-
-        ripple.setAttribute('style', convertStyle(style));
-
-        setTimeout(function() {
-          try {
-            el.removeChild(ripple);
-          } catch(e) {
-            return false;
-          }
-        }, Effect.duration);
-      }, delay);
-    },
-
-    // Little hack to make <input> can perform waves effect
-    wrapInput: function(elements) {
-      for (var a = 0; a < elements.length; a++) {
-        var el = elements[a];
-
-        if (el.tagName.toLowerCase() === 'input') {
-          var parent = el.parentNode;
-
-          // If input already have parent just pass through
-          if (parent.tagName.toLowerCase() === 'i' && parent.className.indexOf('waves-effect') !== -1) {
-            continue;
-          }
-
-          // Put element class and style to the specified parent
-          var wrapper = document.createElement('i');
-          wrapper.className = el.className + ' waves-input-wrapper';
-
-          var elementStyle = el.getAttribute('style');
-
-          if (!elementStyle) {
-            elementStyle = '';
-          }
-
-          wrapper.setAttribute('style', elementStyle);
-
-          el.className = 'waves-button-input';
-          el.removeAttribute('style');
-
-          // Put element as child
-          parent.replaceChild(wrapper, el);
-          wrapper.appendChild(el);
-        }
-      }
-    }
-  };
-
-
-  /**
-   * Disable mousedown event for 500ms during and after touch
-   */
-  var TouchHandler = {
-    /* uses an integer rather than bool so there's no issues with
-     * needing to clear timeouts if another touch event occurred
-     * within the 500ms. Cannot mouseup between touchstart and
-     * touchend, nor in the 500ms after touchend. */
-    touches: 0,
-    allowEvent: function(e) {
-      var allow = true;
-
-      if (e.type === 'touchstart') {
-        TouchHandler.touches += 1; //push
-      } else if (e.type === 'touchend' || e.type === 'touchcancel') {
-        setTimeout(function() {
-          if (TouchHandler.touches > 0) {
-            TouchHandler.touches -= 1; //pop after 500ms
-          }
-        }, 500);
-      } else if (e.type === 'mousedown' && TouchHandler.touches > 0) {
-        allow = false;
-      }
-
-      return allow;
-    },
-    touchup: function(e) {
-      TouchHandler.allowEvent(e);
-    }
-  };
-
-
-  /**
-   * Delegated click handler for .waves-effect element.
-   * returns null when .waves-effect element not in "click tree"
-   */
-  function getWavesEffectElement(e) {
-    if (TouchHandler.allowEvent(e) === false) {
-      return null;
-    }
-
-    var element = null;
-    var target = e.target || e.srcElement;
-
-    while (target.parentNode !== null) {
-      if (!(target instanceof SVGElement) && target.className.indexOf('waves-effect') !== -1) {
-        element = target;
-        break;
-      }
-      target = target.parentNode;
-    }
-    return element;
-  }
-
-  /**
-   * Bubble the click and show effect if .waves-effect elem was found
-   */
-  function showEffect(e) {
-    var element = getWavesEffectElement(e);
-
-    if (element !== null) {
-      Effect.show(e, element);
-
-      if ('ontouchstart' in window) {
-        element.addEventListener('touchend', Effect.hide, false);
-        element.addEventListener('touchcancel', Effect.hide, false);
-      }
-
-      element.addEventListener('mouseup', Effect.hide, false);
-      element.addEventListener('mouseleave', Effect.hide, false);
-      element.addEventListener('dragend', Effect.hide, false);
-    }
-  }
-
-  Waves.displayEffect = function(options) {
-    options = options || {};
-
-    if ('duration' in options) {
-      Effect.duration = options.duration;
-    }
-
-    //Wrap input inside <i> tag
-    Effect.wrapInput($$('.waves-effect'));
-
-    if ('ontouchstart' in window) {
-      document.body.addEventListener('touchstart', showEffect, false);
-    }
-
-    document.body.addEventListener('mousedown', showEffect, false);
-  };
-
-  /**
-   * Attach Waves to an input element (or any element which doesn't
-   * bubble mouseup/mousedown events).
-   *   Intended to be used with dynamically loaded forms/inputs, or
-   * where the user doesn't want a delegated click handler.
-   */
-  Waves.attach = function(element) {
-    //FUTURE: automatically add waves classes and allow users
-    // to specify them with an options param? Eg. light/classic/button
-    if (element.tagName.toLowerCase() === 'input') {
-      Effect.wrapInput([element]);
-      element = element.parentNode;
-    }
-
-    if ('ontouchstart' in window) {
-      element.addEventListener('touchstart', showEffect, false);
-    }
-
-    element.addEventListener('mousedown', showEffect, false);
-  };
-
-  window.Waves = Waves;
-
-  document.addEventListener('DOMContentLoaded', function() {
-    Waves.displayEffect();
-  }, false);
-
-})(window);
+  // eslint-disable-next-line no-undef
+  feather.replace()
+}) // End of use strict

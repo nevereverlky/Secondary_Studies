@@ -91,7 +91,7 @@ export default {
       type: type
     })
   },
-   //Loading加载
+  // Loading加载
   openFullScreen (that) {
     const loading = that.$loading({
       lock: true,
