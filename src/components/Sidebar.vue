@@ -29,6 +29,10 @@
               background-color="#ffffff"
               text-color="#919ebc"
               active-text-color="#1bc5bd">
+              <el-menu-item index="/overallview">
+                <i class="feather" data-feather="grid" style="color:#919ebc;margin-right: 10px; "></i>
+                <span style="font-size:14px">预警与总览</span>
+              </el-menu-item>
               <el-submenu index="1">
                 <template slot="title">
                   <i class="feather" data-feather="pie-chart" style="color:#919ebc;background-color:#f7f8f8;border-radius: 12px;margin-right: 10px; "></i>
@@ -53,10 +57,6 @@
                 </template>
                 <el-menu-item index="/informationentry"><i class="fa fa-ellipsis-h" style="color:#919ebc"></i>新生信息录入</el-menu-item>
               </el-submenu>
-                <el-menu-item index="/overallview">
-                  <i class="feather" data-feather="grid" style="color:#919ebc;margin-right: 10px; "></i>
-                  <span style="font-size:14px">预警与总览</span>
-                </el-menu-item>
             </el-menu>
           </el-col>
         </el-row>

@@ -33,7 +33,7 @@
                   style="width: 100%"
                   cell-style="font-size: 13px">
                   <el-table-column>
-                    <template slot="header" slot-scope="scope">
+                    <template slot="header">
                       <div style="display: flex;flex-direction: row;justify-content: space-between">
                         <el-input
                           scope
@@ -107,7 +107,7 @@
                       label="开放导章权限"
                       prop="action"
                       width="100">
-                      <template slot-scope="scope">
+                      <template>
                         <el-switch
                           v-model="authority"
                           active-color="#1bc5bd"
@@ -119,7 +119,7 @@
                       label="操作"
                       prop="action"
                       width="100">
-                      <template slot-scope="scope">
+                      <template>
                         <button type="button" class="btn btn-sm btn-primary waves-effect waves-light m-1">修改</button>
                       </template>
                     </el-table-column>
@@ -161,7 +161,7 @@ export default {
       search_activeDateEnd: '',
       currentPage: 1, // 当前页码
       total: 20, // 总条数
-      activeData_length: 0, //总条目数
+      activeData_length: 0, // 总条目数
       pageSize: 10, // 每页的数据条数
       authority: true,
       activeData: [
@@ -176,73 +176,73 @@ export default {
     }
   },
   methods: {
-    //每页条数改变时触发 选择一页显示多少行
+    // 每页条数改变时触发 选择一页显示多少行
     handleSizeChange (val) {
-      console.log(`每页 ${val} 条`);
-      this.currentPage = 1;
-      this.pageSize = val;
+      console.log(`每页 ${val} 条`)
+      this.currentPage = 1
+      this.pageSize = val
     },
-    //当前页改变时触发 跳转其他页
+    // 当前页改变时触发 跳转其他页
     handleCurrentChange (val) {
-      console.log(`当前页: ${val}`);
-      this.currentPage = val;
+      console.log(`当前页: ${val}`)
+      this.currentPage = val
     },
     reset () {
-      this.search_account = '';
-      this.search_activename = '';
-      this.search_organization = '';
-      this.search_activeDate = '';
-      this.search_activeDateBegin = '';
-      this.search_activeDateEnd = '';
-      request.message(this, '重置成功', 'success');
+      this.search_account = ''
+      this.search_activename = ''
+      this.search_organization = ''
+      this.search_activeDate = ''
+      this.search_activeDateBegin = ''
+      this.search_activeDateEnd = ''
+      request.message(this, '重置成功', 'success')
     },
     handleSearch_account (val) {
-      let search = val;
-      this.search_account = search;
-      this.currentPage = 1;
+      let search = val
+      this.search_account = search
+      this.currentPage = 1
     },
     handleSearch_activename (val) {
-      let search = val;
-      this.search_activename = search;
-      this.currentPage = 1;
+      let search = val
+      this.search_activename = search
+      this.currentPage = 1
     },
     handleSearch_organization (val) {
-      let search = val;
-      this.search_organization = search;
-      this.currentPage = 1;
+      let search = val
+      this.search_organization = search
+      this.currentPage = 1
     },
-    handleSearch_activeDate(val) {
-      let _this = this;
+    handleSearch_activeDate (val) {
+      let _this = this
       console.log(val)
-      if (val === null || val === ''){
-        _this.search_activeDate = '';
-        _this.search_activeDateBegin = '';
-        _this.search_activeDateEnd = '';
-      }else {
-        let search1 = _this.formateTime(val[0]);
-        let search2 = _this.formateTime(val[1]);
+      if (val === null || val === '') {
+        _this.search_activeDate = ''
+        _this.search_activeDateBegin = ''
+        _this.search_activeDateEnd = ''
+      } else {
+        let search1 = _this.formateTime(val[0])
+        let search2 = _this.formateTime(val[1])
         console.log(search1)
         console.log(search2)
-        _this.search_activeDateBegin = search1;
-        _this.search_activeDateEnd = search2;
-        _this.currentPage = 1;
+        _this.search_activeDateBegin = search1
+        _this.search_activeDateEnd = search2
+        _this.currentPage = 1
       }
-    },
+    }
   },
   watch: {
-    //watch监视input输入值的变化,只要是watch变化了 search()就会被调用
-    search_account(newVal) {
-      this.handleSearch_account(newVal);
+    // watch监视input输入值的变化,只要是watch变化了 search()就会被调用
+    search_account (newVal) {
+      this.handleSearch_account(newVal)
     },
-    search_activename(newVal) {
-      this.handleSearch_activename(newVal);
+    search_activename (newVal) {
+      this.handleSearch_activename(newVal)
     },
-    search_organization(newVal) {
-      this.handleSearch_organization(newVal);
+    search_organization (newVal) {
+      this.handleSearch_organization(newVal)
     },
-    search_activeDate(newVal) {
-      this.handleSearch_activeDate(newVal);
-    },
+    search_activeDate (newVal) {
+      this.handleSearch_activeDate(newVal)
+    }
   }
 }
 </script>

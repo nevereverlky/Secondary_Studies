@@ -138,14 +138,14 @@ import request from '../../utils/request'
 export default {
   name: 'activityChapter',
   data () {
-    return{
-      dialogchapers : false
+    return {
+      dialogchapers: false
     }
   },
   methods: {
     clearFiles () {
-      this.dialogchapers = false;
-    },
+      this.dialogchapers = false
+    }
     // submitUpload() {
     //   let _this = this
     //   // const loading = _this.$loading({
