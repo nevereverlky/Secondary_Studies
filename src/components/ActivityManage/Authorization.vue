@@ -62,7 +62,7 @@
                           type="datetimerange"
                           start-placeholder="搜索扫章开始时间"
                           end-placeholder="扫章结束时间内"/>
-                        <button type="button" class="btn btn-sm btn-primary waves-effect waves-light m-1" @click="reset">重置</button>
+                        <button type="button" class="btn btn-sm btn-success waves-effect waves-light m-1" @click="reset">重置</button>
                       </div>
                     </template>
                     <el-table-column
@@ -159,7 +159,6 @@ export default {
       search_account: '',
       search_activename: '',
       search_organization: '',
-      search_place: '',
       search_activeDate: '',
       search_activeDateBegin: '',
       search_activeDateEnd: '',
