@@ -57,27 +57,7 @@
                     </li>
                     <li>
                       <a href="#">
-                        <i class="fa fa-users text-danger"/> Donec at nisi sit amet tortor commodo porttitor pretium a erat.
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-shopping-cart text-success"/> In gravida mauris et nisi
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
                         <i class="fa fa-user text-danger"/> Praesent eu lacus in libero dictum fermentum.
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-user text-primary"/> Nunc fringilla lorem
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#">
-                        <i class="fa fa-user text-success"/> Nullam euismod dolor ut quam interdum, at scelerisque ipsum imperdiet.
                       </a>
                     </li>
                   </ul>
@@ -96,12 +76,8 @@
               </a>
               <ul class="dropdown-menu animated flipInX">
                 <li class="user-body">
-                  <router-link tag="a" to="/UserInfo">
-                    <a class="dropdown-item"><i class="fa fa fa-user text-muted mr-2"/>帐号</a>
-                  </router-link>
-                  <router-link tag="a" to="/EditPassword">
-                    <a class="dropdown-item"><i class="fa fa-unlock-alt text-muted mr-2"/>修改密码</a>
-                  </router-link>
+                  <router-link tag="a" to="/UserInfo" class="dropdown-item"><i class="fa fa fa-user text-muted mr-2"/>帐号</router-link>
+                  <router-link tag="a" to="/EditPassword" class="dropdown-item"><i class="fa fa-unlock-alt text-muted mr-2"/>修改密码</router-link>
                   <div class="dropdown-divider"/>
                   <a class="dropdown-item" @click="tologin"><i class="fa fa-lock text-muted mr-2"/>注销</a>
                 </li>

@@ -174,6 +174,7 @@
                     <el-table-column
                       prop="action"
                       width="200">
+                      <!-- eslint-disable-next-line -->
                       <template slot="header" slot-scope="scope">
                         <el-input
                           v-model="search_name"
@@ -182,7 +183,8 @@
                           size="mini"
                           placeholder="输入姓名搜索"/>
                       </template>
-                      <template>
+                      <!-- eslint-disable-next-line -->
+                      <template slot-scope="scope">
                         <button type="button" class="btn btn-outline btn-rounded btn-primary btn-sm mb-0">推送消息</button>
                       </template>
                     </el-table-column>
@@ -252,6 +254,7 @@
                     <el-table-column
                       prop="action"
                       width="200">
+                      <!-- eslint-disable-next-line -->
                       <template slot="header" slot-scope="scope">
                         <el-input
                           v-model="search_activename"
@@ -329,6 +332,7 @@
                     <el-table-column
                       prop="action"
                       width="200">
+                      <!-- eslint-disable-next-line -->
                       <template slot="header" slot-scope="scope">
                         <el-input
                           v-model="search_activename"
@@ -407,6 +411,7 @@
                     <el-table-column
                       prop="action"
                       width="200">
+                      <!-- eslint-disable-next-line -->
                       <template slot="header" slot-scope="scope">
                         <el-input
                           v-model="search_activename"

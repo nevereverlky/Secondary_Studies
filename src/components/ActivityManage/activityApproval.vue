@@ -79,7 +79,7 @@
                                       type="datetimerange"
                                       start-placeholder="搜索扫章开始时间"
                                       end-placeholder="扫章结束时间内"/>
-                                    <button type="button" class="btn btn-sm btn-success waves-effect waves-light m-1" @click="reset">重置</button>
+                                    <button type="button" class="btn btn-sm btn-primary waves-effect waves-light m-1" @click="reset">重置</button>
                                   </div>
                                 </template>
                                 <el-table-column
@@ -196,7 +196,7 @@
                                       type="datetimerange"
                                       start-placeholder="搜索扫章开始时间"
                                       end-placeholder="扫章结束时间内"/>
-                                    <button type="button" class="btn btn-sm btn-success waves-effect waves-light m-1" @click="reset">重置</button>
+                                    <button type="button" class="btn btn-sm btn-primary waves-effect waves-light m-1" @click="reset">重置</button>
                                   </div>
                                 </template>
                                 <el-table-column
@@ -254,7 +254,7 @@
                                   width="100">
                                   <!-- eslint-disable-next-line -->
                                    <template slot-scope="scope">
-                                    <span :class="scope.row.pass?'badge-primary':'badge-warning'" class="badge"> {{ scope.row.pass? '已通过':'已驳回' }}</span>
+                                    <span :class="scope.row.pass?'badge-success':'badge-warning'" class="badge"> {{ scope.row.pass? '已通过':'已驳回' }}</span>
                                   </template>
                                 </el-table-column>
                               </el-table-column>
