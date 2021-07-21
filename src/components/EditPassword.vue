@@ -25,7 +25,7 @@
 
             <!-- Main content -->
             <section class="content">
-              <div class="col-12">
+              <div class="col-6">
                 <div class="box box-default">
                   <!--<div class="box-header with-border">-->
                   <!--<h5 class="box-title">活动审批状态</h5>-->
@@ -35,7 +35,7 @@
                     <!-- Nav tabs -->
                     <el-form ref="form" :model="user" :rules="rules" label-width="80px">
                       <el-form-item label="账号ID" prop="userId">
-                        <el-input v-model="user.id" placeholder="请输入账号名" type="string" />
+                        <el-input v-model="user.id" placeholder="请输入账号" type="string"/>
                       </el-form-item>
                       <el-form-item label="旧密码" prop="oldPassword">
                         <el-input v-model="user.oldPassword" placeholder="请输入旧密码" type="password" />
@@ -46,10 +46,7 @@
                       <el-form-item label="确认密码" prop="confirmPassword">
                         <el-input v-model="user.confirmPassword" placeholder="请确认密码" type="password" />
                       </el-form-item>
-                      <el-form-item>
-                        <el-button type="primary" size="mini" @click="submit">保存</el-button>
-                        <el-button type="danger" size="mini" @click="close">关闭</el-button>
-                      </el-form-item>
+                      <button type="button" class="btn btn-sm btn-primary waves-effect waves-light m-1" style="float:right">确认修改</button>
                     </el-form>
                     <!-- Tab panes -->
                     <div class="tab-content">

@@ -22,7 +22,7 @@
                 </div>
                 <div class="col-sm-5">
                   <div class="btn-group float-sm-right">
-                    <button type="button" class="btn btn-primary btn-sm waves-effect waves-light"><i class="fa fa-plus-square mr-1"/>创建活动</button>
+                    <button type="button" class="btn btn-primary btn-sm waves-effect waves-light" @click="addFormVisible = true"><i class="fa fa-plus-square mr-1"/>创建活动</button>
                   </div>
                 </div>
               </div>
@@ -105,7 +105,7 @@
                                   <div class="box-footer text-right p-0">
                                     <div class="px-25 py-5 w-100" style="float:left"><span class="badge badge-success">待审批</span></div>
                                     <el-tooltip class="item" effect="dark" content="仅可修改一次" placement="bottom">
-                                      <button class="btn btn-outline btn-success btn-sm"><i class="fa fa-pencil"/></button>
+                                      <button class="btn btn-outline btn-success btn-sm" @click="editFormVisible = true"><i class="fa fa-pencil"/></button>
                                     </el-tooltip>
                                   </div>
                                 </div>
@@ -150,6 +150,152 @@
           </div>
         </div>
 
+        <el-dialog :visible.sync="addFormVisible" title="创建活动" width="60%">
+
+          <el-form :model="form" size="small">
+            <div style="display:flex">
+              <div style="flex:1">
+                <el-form-item :label-width="formLabelWidth" label="活动名称">
+                  <el-input v-model="form.activename" autocomplete="off"/>
+                </el-form-item>
+                <el-form-item :label-width="formLabelWidth" label="举办单位">
+                  <el-select v-model="form.organization" placeholder="请选择活动主办方">
+                    <el-option label="计算机系学生会" value="shanghai"/>
+                    <el-option label="β-house工作室" value="beijing"/>
+                  </el-select>
+                </el-form-item>
+                <el-form-item :label-width="formLabelWidth" label="活动地点">
+                  <el-input v-model="form.place" autocomplete="off"/>
+                </el-form-item>
+                <el-form-item :label-width="formLabelWidth" label="活动类型">
+                  <el-select v-model="form.type" placeholder="请选择活动类型">
+                    <el-option label="校园活动" value="shanghai"/>
+                    <el-option label="志愿活动" value="beijing"/>
+                    <el-option label="实践活动" value="beijing"/>
+                    <el-option label="讲座活动" value="beijing"/>
+                  </el-select>
+                </el-form-item>
+                <el-form-item :label-width="formLabelWidth" label="活动学期">
+                  <el-select v-model="form.term" placeholder="请选择活动学期">
+                    <el-option label="2020-2021第一学期" value="shanghai"/>
+                    <el-option label="2020-2021第二学期" value="beijing"/>
+                    <el-option label="2021-2022第一学期" value="beijing"/>
+                    <el-option label="2021-2022第二学期" value="beijing"/>
+                    <el-option label="2022-2023第一学期" value="beijing"/>
+                    <el-option label="2022-2023第二学期" value="beijing"/>
+                  </el-select>
+                </el-form-item>
+              </div>
+              <div style="flex:1">
+                <el-form-item :label-width="formLabelWidth" label="扫章时间">
+                  <el-date-picker
+                    v-model="form.timevalue"
+                    type="datetimerange"
+                    range-separator="至"
+                    start-placeholder="开始日期"
+                    end-placeholder="结束日期"/>
+                </el-form-item>
+                <el-form-item :label-width="formLabelWidth" label="申请章数">
+                  <el-input-number v-model="form.requestnum" :min="1" :max="1000" size="small" label="描述文字" @change="handleChange"/>
+                </el-form-item>
+                <el-form-item :label-width="formLabelWidth" label="钉钉截图">
+                  <el-upload
+                    :on-preview="handlePreview"
+                    :on-remove="handleRemove"
+                    :before-remove="beforeRemove"
+                    :limit="1"
+                    :on-exceed="handleExceed"
+                    :file-list="fileList"
+                    class="upload-demo"
+                    action=""
+                    multiple>
+                    <el-button size="small" type="primary" plain>点击上传</el-button>
+                    <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+                  </el-upload>
+                </el-form-item>
+              </div>
+            </div>
+          </el-form>
+          <div slot="footer" class="dialog-footer">
+            <el-button size="small" @click="addFormVisible = false">取 消</el-button>
+            <el-button type="primary" size="small" @click="addFormVisible = false">确认创建</el-button>
+          </div>
+
+        </el-dialog>
+
+        <el-dialog :visible.sync="editFormVisible" title="修改申请" width="60%">
+
+          <el-form :model="form" size="small">
+            <div style="display:flex">
+              <div style="flex:1">
+                <el-form-item :label-width="formLabelWidth" label="活动名称">
+                  <el-input v-model="form.activename" autocomplete="off"/>
+                </el-form-item>
+                <el-form-item :label-width="formLabelWidth" label="举办单位">
+                  <el-select v-model="form.organization" placeholder="请选择活动主办方">
+                    <el-option label="计算机系学生会" value="shanghai"/>
+                    <el-option label="β-house工作室" value="beijing"/>
+                  </el-select>
+                </el-form-item>
+                <el-form-item :label-width="formLabelWidth" label="活动地点">
+                  <el-input v-model="form.place" autocomplete="off"/>
+                </el-form-item>
+                <el-form-item :label-width="formLabelWidth" label="活动类型">
+                  <el-select v-model="form.type" placeholder="请选择活动类型">
+                    <el-option label="校园活动" value="shanghai"/>
+                    <el-option label="志愿活动" value="beijing"/>
+                    <el-option label="实践活动" value="beijing"/>
+                    <el-option label="讲座活动" value="beijing"/>
+                  </el-select>
+                </el-form-item>
+                <el-form-item :label-width="formLabelWidth" label="活动学期">
+                  <el-select v-model="form.term" placeholder="请选择活动学期">
+                    <el-option label="2020-2021第一学期" value="shanghai"/>
+                    <el-option label="2020-2021第二学期" value="beijing"/>
+                    <el-option label="2021-2022第一学期" value="beijing"/>
+                    <el-option label="2021-2022第二学期" value="beijing"/>
+                    <el-option label="2022-2023第一学期" value="beijing"/>
+                    <el-option label="2022-2023第二学期" value="beijing"/>
+                  </el-select>
+                </el-form-item>
+              </div>
+              <div style="flex:1">
+                <el-form-item :label-width="formLabelWidth" label="扫章时间">
+                  <el-date-picker
+                    v-model="form.timevalue"
+                    type="datetimerange"
+                    range-separator="至"
+                    start-placeholder="开始日期"
+                    end-placeholder="结束日期"/>
+                </el-form-item>
+                <el-form-item :label-width="formLabelWidth" label="申请章数">
+                  <el-input-number v-model="form.requestnum" :min="1" :max="1000" size="small" label="描述文字" @change="handleChange"/>
+                </el-form-item>
+                <el-form-item :label-width="formLabelWidth" label="钉钉截图">
+                  <el-upload
+                    :on-preview="handlePreview"
+                    :on-remove="handleRemove"
+                    :before-remove="beforeRemove"
+                    :limit="1"
+                    :on-exceed="handleExceed"
+                    :file-list="fileList"
+                    class="upload-demo"
+                    action=""
+                    multiple>
+                    <el-button size="small" type="primary" plain>点击上传</el-button>
+                    <div slot="tip" class="el-upload__tip">只能上传jpg/png文件，且不超过500kb</div>
+                  </el-upload>
+                </el-form-item>
+              </div>
+            </div>
+          </el-form>
+          <div slot="footer" class="dialog-footer">
+            <el-button size="small" @click="editFormVisible = false">取 消</el-button>
+            <el-button type="primary" size="small" @click="editFormVisible = false">重新提交</el-button>
+          </div>
+
+        </el-dialog>
+
       </div>
     </div>
   </div>
@@ -157,7 +303,38 @@
 
 <script>
 export default {
-  name: 'ActivityInquiry'
+  name: 'ActivityInquiry',
+  data() {
+    return {
+      formLabelWidth: '80px',
+      addFormVisible: false,
+      editFormVisible: false,
+      form: {
+        activename: '',
+        organization: '',
+        place: '',
+        type: '',
+        term: '',
+        timevalue: [new Date(), new Date()],
+        requestnum: '',
+        fileList: [{ name: 'food.jpeg', url: '' }]
+      }
+    }
+  },
+  methods: {
+    handleRemove(file, fileList) {
+      console.log(file, fileList)
+    },
+    handlePreview(file) {
+      console.log(file)
+    },
+    handleExceed(files, fileList) {
+      this.$message.warning(`当前限制选择 1 个文件，本次选择了 ${files.length} 个文件，共选择了 ${files.length + fileList.length} 个文件`)
+    },
+    beforeRemove(file, fileList) {
+      return this.$confirm(`确定移除 ${file.name}？`)
+    }
+  }
 }
 </script>
 

@@ -122,7 +122,7 @@
                       width="100">
                       <!-- eslint-disable-next-line -->
                       <template slot-scope="scope">
-                        <button type="button" class="btn btn-sm btn-primary waves-effect waves-light m-1">修改</button>
+                        <button type="button" class="btn btn-sm btn-primary waves-effect waves-light m-1" @click="edittimeVisible = true">修改</button>
                       </template>
                     </el-table-column>
                   </el-table-column>
@@ -144,6 +144,25 @@
             <!-- /.content -->
           </div>
         </div>
+
+        <el-dialog :visible.sync="edittimeVisible" title="修改扫章时间" width="35%">
+          <p>当前选中活动：田径运动会开幕式活动</p>
+          <el-form :model="form" size="small">
+            <el-form-item :label-width="formLabelWidth" label="扫章时间">
+              <el-date-picker
+                v-model="form.timevalue"
+                type="datetimerange"
+                range-separator="至"
+                start-placeholder="开始日期"
+                end-placeholder="结束日期"/>
+            </el-form-item>
+          </el-form>
+          <div slot="footer" class="dialog-footer">
+            <el-button size="small" @click="edittimeVisible = false">取 消</el-button>
+            <el-button type="primary" size="small" @click="edittimeVisible = false">确 认</el-button>
+          </div>
+
+        </el-dialog>
 
       </div>
     </div>
@@ -175,7 +194,12 @@ export default {
           place: 'C楼511',
           time: '2021.7.16 12:00 ~ 13:00'
         }
-      ]
+      ],
+      edittimeVisible: false,
+      formLabelWidth: '80px',
+      form: {
+        timevalue: ''
+      }
     }
   },
   watch: {

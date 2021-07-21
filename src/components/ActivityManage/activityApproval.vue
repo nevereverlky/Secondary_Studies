@@ -137,7 +137,7 @@
                                   width="100">
                                   <!-- eslint-disable-next-line -->
                                   <template slot-scope="scope">
-                                    <button type="button" class="btn btn-sm btn-success waves-effect waves-light m-1">审批</button>
+                                    <button type="button" class="btn btn-sm btn-success waves-effect waves-light m-1" @click="toApprove(scope.row.id)">审批</button>
                                   </template>
                                 </el-table-column>
                               </el-table-column>
@@ -398,6 +398,15 @@ export default {
         _this.search_activeDateEnd = search2
         _this.currentPage = 1
       }
+    },
+    toApprove(id) {
+      this.$router.push({
+        path: '/approvecard',
+        name: 'approveCard',
+        query: {
+          activeId: id
+        }
+      })
     }
   }
 }
