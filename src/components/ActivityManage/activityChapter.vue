@@ -95,39 +95,40 @@
             </section>
             <!-- /.content -->
 
-            <el-dialog :visible.sync="dialogchapers" :show-close="false" title="Excel批量导章" width="30%">
-              <div style="display: flex;justify-content: center">
-                <el-upload
-                  ref="upload"
-                  :limit="1"
-                  :on-preview="handlePreview"
-                  :on-change="handleChange"
-                  :on-remove="handleRemove"
-                  :before-remove="beforeRemove"
-                  :on-exceed="handleExceed"
-                  :file-list="fileList"
-                  :show-file-list="fileList"
-                  :auto-upload="false"
-                  class="upload-demo"
-                  action="#"
-                  multiple
-                  accept=".xls,.xlsx"
-                  drag>
-                  <i class="el-icon-upload"/>
-                  <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
-                  <div slot="tip" class="el-upload__tip">只能上传一个.xls,.xlsx文件，且不超过10mb<br><b style="color: red">*</b>
-                    文件格式规定如下：<br>
-                    <img src="../../assets/images/model.png" alt="">
-                  </div>
-                </el-upload>
-              </div>
-              <div slot="footer" class="dialog-footer">
-                <el-button size="small" @click="clearFiles">取 消</el-button>
-                <el-button style="margin-left: 10px;" size="small" type="primary" plain @click="submitUpload">上传到服务器</el-button>
-              </div>
-            </el-dialog>
           </div>
         </div>
+
+        <el-dialog :visible.sync="dialogchapers" :show-close="false" title="Excel批量导章" width="30%">
+          <div style="display: flex;justify-content: center">
+            <el-upload
+              ref="upload"
+              :limit="1"
+              :on-preview="handlePreview"
+              :on-change="handleChange"
+              :on-remove="handleRemove"
+              :before-remove="beforeRemove"
+              :on-exceed="handleExceed"
+              :file-list="fileList"
+              :show-file-list="fileList"
+              :auto-upload="false"
+              class="upload-demo"
+              action="#"
+              multiple
+              accept=".xls,.xlsx"
+              drag>
+              <i class="el-icon-upload"/>
+              <div class="el-upload__text">将文件拖到此处，或<em>点击上传</em></div>
+              <div slot="tip" class="el-upload__tip">只能上传一个.xls,.xlsx文件，且不超过10mb<br><b style="color: red">*</b>
+                文件格式规定如下：<br>
+                <img src="../../assets/images/model.png" alt="">
+              </div>
+            </el-upload>
+          </div>
+          <div slot="footer" class="dialog-footer">
+            <el-button size="small" @click="clearFiles">取 消</el-button>
+            <el-button style="margin-left: 10px;" size="small" type="primary" plain @click="submitUpload">上传到服务器</el-button>
+          </div>
+        </el-dialog>
 
       </div>
     </div>

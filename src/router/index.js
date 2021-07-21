@@ -6,6 +6,7 @@ import Router from 'vue-router'
 import Index from '@/views/Index.vue'
 import activityInquiry from '@/components/ActivityManage/activityInquiry'
 import activityApproval from '@/components/ActivityManage/activityApproval'
+import approveCard from '@/components/ActivityManage/approveCard'
 import activityChapter from '@/components/ActivityManage/activityChapter'
 import chapterInout from '@/components/ActivityManage/chapterInout'
 import Authorization from '@/components/ActivityManage/Authorization'
@@ -44,6 +45,11 @@ const router = new Router({
           path: '/activityapproval',
           name: 'activityApproval',
           component: activityApproval
+        },
+        {
+          path: '/approvecard',
+          name: 'approveCard',
+          component: approveCard
         },
         {
           path: '/activitychapter',
